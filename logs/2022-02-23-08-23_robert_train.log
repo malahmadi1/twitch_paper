@@ -1,0 +1,1405 @@
+2022-02-23 08:23:18,954 Namespace(batch_size=16, bert_config='bert-base-uncased', chunk_len=10, cont_training=False, finetune_epochs=50, img_dim=256, kfold=10, logDir='logs', lr=3e-05, lstm_hidden_layer=100, modelDir='weights', model_type='robert', n_class=3, overlap_len=5, pretrain_epochs=50, pretrain_warmup_steps=300, root='data/chats_data_sampled_combined.xlsx - Combined_round_2k.csv', split_ratio=0.8)
+2022-02-23 08:23:20,745 Base_Model(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (out): Linear(in_features=768, out_features=3, bias=True)
+)
+2022-02-23 08:23:43,511 Starting Pretraining
+2022-02-23 08:24:10,518 Train Epoch : 1	 Training Loss : 0.8813094213124244
+2022-02-23 08:24:37,467 Train Epoch : 2	 Training Loss : 0.590922478706606
+2022-02-23 08:25:04,472 Train Epoch : 3	 Training Loss : 0.46859371559994834
+2022-02-23 08:25:31,491 Train Epoch : 4	 Training Loss : 0.3302865988845306
+2022-02-23 08:25:58,554 Train Epoch : 5	 Training Loss : 0.21234909868648938
+2022-02-23 08:26:25,659 Train Epoch : 6	 Training Loss : 0.1779653368998439
+2022-02-23 08:26:52,869 Train Epoch : 7	 Training Loss : 0.1478885270189494
+2022-02-23 08:27:20,086 Train Epoch : 8	 Training Loss : 0.16659848148664158
+2022-02-23 08:27:47,261 Train Epoch : 9	 Training Loss : 0.10709040887623784
+2022-02-23 08:28:14,493 Train Epoch : 10	 Training Loss : 0.0839487217317876
+2022-02-23 08:28:41,774 Train Epoch : 11	 Training Loss : 0.0757864050730507
+2022-02-23 08:29:09,093 Train Epoch : 12	 Training Loss : 0.0724022047643009
+2022-02-23 08:29:36,355 Train Epoch : 13	 Training Loss : 0.07085026502928456
+2022-02-23 08:30:03,684 Train Epoch : 14	 Training Loss : 0.06832441041056413
+2022-02-23 08:30:31,026 Train Epoch : 15	 Training Loss : 0.06554211900689669
+2022-02-23 08:30:58,419 Train Epoch : 16	 Training Loss : 0.06588351441267502
+2022-02-23 08:31:25,857 Train Epoch : 17	 Training Loss : 0.0658512442971715
+2022-02-23 08:31:53,314 Train Epoch : 18	 Training Loss : 0.0641911289065085
+2022-02-23 08:32:20,768 Train Epoch : 19	 Training Loss : 0.06482947694589271
+2022-02-23 08:32:48,202 Train Epoch : 20	 Training Loss : 0.06636586320993017
+2022-02-23 08:33:15,665 Train Epoch : 21	 Training Loss : 0.06616461141956895
+2022-02-23 08:33:43,125 Train Epoch : 22	 Training Loss : 0.06473364315752406
+2022-02-23 08:34:10,627 Train Epoch : 23	 Training Loss : 0.07564743424741356
+2022-02-23 08:34:38,130 Train Epoch : 24	 Training Loss : 0.0689145049604591
+2022-02-23 08:35:05,638 Train Epoch : 25	 Training Loss : 0.07110298363090072
+2022-02-23 08:35:33,111 Train Epoch : 26	 Training Loss : 0.06855888453179843
+2022-02-23 08:36:00,635 Train Epoch : 27	 Training Loss : 0.0725973113883576
+2022-02-23 08:36:28,188 Train Epoch : 28	 Training Loss : 0.06752501902472784
+2022-02-23 08:36:55,754 Train Epoch : 29	 Training Loss : 0.06527683081226461
+2022-02-23 08:37:23,298 Train Epoch : 30	 Training Loss : 0.06407731096917432
+2022-02-23 08:37:50,812 Train Epoch : 31	 Training Loss : 0.06594513756335213
+2022-02-23 08:38:18,392 Train Epoch : 32	 Training Loss : 0.06381515476882228
+2022-02-23 08:38:45,983 Train Epoch : 33	 Training Loss : 0.0633729303442505
+2022-02-23 08:39:13,520 Train Epoch : 34	 Training Loss : 0.06658389159729855
+2022-02-23 08:39:41,112 Train Epoch : 35	 Training Loss : 0.06307844698570872
+2022-02-23 08:40:08,746 Train Epoch : 36	 Training Loss : 0.06320563172489675
+2022-02-23 08:40:36,352 Train Epoch : 37	 Training Loss : 0.06282929528301352
+2022-02-23 08:41:03,967 Train Epoch : 38	 Training Loss : 0.06156715686395933
+2022-02-23 08:41:31,574 Train Epoch : 39	 Training Loss : 0.06332521766612885
+2022-02-23 08:41:59,188 Train Epoch : 40	 Training Loss : 0.06456545460757972
+2022-02-23 08:42:26,792 Train Epoch : 41	 Training Loss : 0.06285904521205192
+2022-02-23 08:42:54,387 Train Epoch : 42	 Training Loss : 0.06156190417929001
+2022-02-23 08:43:22,011 Train Epoch : 43	 Training Loss : 0.06138905491881756
+2022-02-23 08:43:49,629 Train Epoch : 44	 Training Loss : 0.06121341473478805
+2022-02-23 08:44:17,238 Train Epoch : 45	 Training Loss : 0.06131262470303374
+2022-02-23 08:44:44,795 Train Epoch : 46	 Training Loss : 0.06407351255033826
+2022-02-23 08:45:12,433 Train Epoch : 47	 Training Loss : 0.06216591739904552
+2022-02-23 08:45:40,042 Train Epoch : 48	 Training Loss : 0.061050290840930464
+2022-02-23 08:46:07,638 Train Epoch : 49	 Training Loss : 0.06125525468486294
+2022-02-23 08:46:35,290 Train Epoch : 50	 Training Loss : 0.06096254564545234
+2022-02-23 08:46:35,291 Pretraining Completed
+2022-02-23 08:46:40,307 Pretrained model saved at weights/base_model.pt
+2022-02-23 08:46:40,307 Starting kFold Cross Validation for finetuning
+2022-02-23 08:46:40,308 Starting Fold 1
+2022-02-23 08:47:06,092 Fold : 0	 Epoch : 1	 Training Loss : 0.4015584695818169
+2022-02-23 08:47:06,929 Fold : 0	 Epoch : 1	 Validation Loss 0.14443688553113204	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 08:47:08,915 Best Model saved with accuracy 1.0
+2022-02-23 08:47:34,270 Fold : 0	 Epoch : 2	 Training Loss : 0.11442386195994914
+2022-02-23 08:47:35,093 Fold : 0	 Epoch : 2	 Validation Loss 0.07654703150574978	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:48:00,709 Fold : 0	 Epoch : 3	 Training Loss : 0.06354604546712446
+2022-02-23 08:48:01,537 Fold : 0	 Epoch : 3	 Validation Loss 0.05033474902694042	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:48:26,921 Fold : 0	 Epoch : 4	 Training Loss : 0.07271967134771071
+2022-02-23 08:48:27,724 Fold : 0	 Epoch : 4	 Validation Loss 0.04994757158251909	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:48:52,984 Fold : 0	 Epoch : 5	 Training Loss : 0.06998361510756824
+2022-02-23 08:48:53,786 Fold : 0	 Epoch : 5	 Validation Loss 0.13951335360224432	 accuracy : 0.935	 TP : 187	 FP : 13	
+2022-02-23 08:49:19,178 Fold : 0	 Epoch : 6	 Training Loss : 0.055589291267096996
+2022-02-23 08:49:19,975 Fold : 0	 Epoch : 6	 Validation Loss 0.0350858189452153	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:49:45,304 Fold : 0	 Epoch : 7	 Training Loss : 0.034643568040337414
+2022-02-23 08:49:46,130 Fold : 0	 Epoch : 7	 Validation Loss 0.035361662363776795	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:50:11,426 Fold : 0	 Epoch : 8	 Training Loss : 0.03468745784734243
+2022-02-23 08:50:12,243 Fold : 0	 Epoch : 8	 Validation Loss 0.04234854053132809	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:50:37,694 Fold : 0	 Epoch : 9	 Training Loss : 0.03619351697852835
+2022-02-23 08:50:38,507 Fold : 0	 Epoch : 9	 Validation Loss 0.04586367172977099	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 08:51:03,846 Fold : 0	 Epoch : 10	 Training Loss : 0.035701138782314956
+2022-02-23 08:51:04,674 Fold : 0	 Epoch : 10	 Validation Loss 0.08417737390846014	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 08:51:30,090 Fold : 0	 Epoch : 11	 Training Loss : 0.02163535724061408
+2022-02-23 08:51:30,886 Fold : 0	 Epoch : 11	 Validation Loss 0.062295928884011045	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 08:51:56,270 Fold : 0	 Epoch : 12	 Training Loss : 0.021217873972740824
+2022-02-23 08:51:57,069 Fold : 0	 Epoch : 12	 Validation Loss 0.06315820255818275	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 08:52:22,385 Fold : 0	 Epoch : 13	 Training Loss : 0.01638990921700107
+2022-02-23 08:52:23,186 Fold : 0	 Epoch : 13	 Validation Loss 0.04040811543997664	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:52:48,511 Fold : 0	 Epoch : 14	 Training Loss : 0.01456448235382725
+2022-02-23 08:52:49,326 Fold : 0	 Epoch : 14	 Validation Loss 0.056372519152668804	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 08:53:14,750 Fold : 0	 Epoch : 15	 Training Loss : 0.012768233244839524
+2022-02-23 08:53:15,553 Fold : 0	 Epoch : 15	 Validation Loss 0.04943591922235031	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:53:40,932 Fold : 0	 Epoch : 16	 Training Loss : 0.012548887054435909
+2022-02-23 08:53:41,756 Fold : 0	 Epoch : 16	 Validation Loss 0.04557094952234855	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:54:07,087 Fold : 0	 Epoch : 17	 Training Loss : 0.012452719257063498
+2022-02-23 08:54:07,899 Fold : 0	 Epoch : 17	 Validation Loss 0.06905723069436275	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:54:33,348 Fold : 0	 Epoch : 18	 Training Loss : 0.011906683598811339
+2022-02-23 08:54:34,148 Fold : 0	 Epoch : 18	 Validation Loss 0.04640634282707022	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:54:59,539 Fold : 0	 Epoch : 19	 Training Loss : 0.011315944997477345
+2022-02-23 08:55:00,355 Fold : 0	 Epoch : 19	 Validation Loss 0.04750963103455993	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:55:25,762 Fold : 0	 Epoch : 20	 Training Loss : 0.010971595915699644
+2022-02-23 08:55:26,583 Fold : 0	 Epoch : 20	 Validation Loss 0.046358189545571804	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:55:51,987 Fold : 0	 Epoch : 21	 Training Loss : 0.010499921515085069
+2022-02-23 08:55:52,801 Fold : 0	 Epoch : 21	 Validation Loss 0.04915805601586516	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:56:18,173 Fold : 0	 Epoch : 22	 Training Loss : 0.010207038811391353
+2022-02-23 08:56:18,998 Fold : 0	 Epoch : 22	 Validation Loss 0.05403202034246463	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 08:56:44,486 Fold : 0	 Epoch : 23	 Training Loss : 0.012131417577620596
+2022-02-23 08:56:45,298 Fold : 0	 Epoch : 23	 Validation Loss 0.087653579763495	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 08:57:10,652 Fold : 0	 Epoch : 24	 Training Loss : 0.01437010646415209
+2022-02-23 08:57:11,469 Fold : 0	 Epoch : 24	 Validation Loss 0.06069458958406288	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 08:57:36,898 Fold : 0	 Epoch : 25	 Training Loss : 0.011821965990488284
+2022-02-23 08:57:37,722 Fold : 0	 Epoch : 25	 Validation Loss 0.05987981366566741	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:58:03,046 Fold : 0	 Epoch : 26	 Training Loss : 0.012742345071663814
+2022-02-23 08:58:03,861 Fold : 0	 Epoch : 26	 Validation Loss 0.03380186682065519	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:58:29,246 Fold : 0	 Epoch : 27	 Training Loss : 0.012651751705561765
+2022-02-23 08:58:30,066 Fold : 0	 Epoch : 27	 Validation Loss 0.05153634434995743	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 08:58:55,437 Fold : 0	 Epoch : 28	 Training Loss : 0.012500788238997172
+2022-02-23 08:58:56,264 Fold : 0	 Epoch : 28	 Validation Loss 0.03915586741641164	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 08:59:21,677 Fold : 0	 Epoch : 29	 Training Loss : 0.018130029647311727
+2022-02-23 08:59:22,503 Fold : 0	 Epoch : 29	 Validation Loss 0.028960101306438446	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 08:59:47,793 Fold : 0	 Epoch : 30	 Training Loss : 0.01579503556630308
+2022-02-23 08:59:48,592 Fold : 0	 Epoch : 30	 Validation Loss 0.0555492436262564	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:00:14,045 Fold : 0	 Epoch : 31	 Training Loss : 0.0119160548887781
+2022-02-23 09:00:14,862 Fold : 0	 Epoch : 31	 Validation Loss 0.056875446847138494	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:00:40,163 Fold : 0	 Epoch : 32	 Training Loss : 0.009394411943503655
+2022-02-23 09:00:40,995 Fold : 0	 Epoch : 32	 Validation Loss 0.1478334867861122	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 09:01:06,406 Fold : 0	 Epoch : 33	 Training Loss : 0.017154439695462185
+2022-02-23 09:01:07,211 Fold : 0	 Epoch : 33	 Validation Loss 0.046269352512004286	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:01:32,523 Fold : 0	 Epoch : 34	 Training Loss : 0.009880146165544699
+2022-02-23 09:01:33,343 Fold : 0	 Epoch : 34	 Validation Loss 0.04752344387368514	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:01:58,802 Fold : 0	 Epoch : 35	 Training Loss : 0.00800035278163185
+2022-02-23 09:01:59,636 Fold : 0	 Epoch : 35	 Validation Loss 0.051068766902272515	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:02:25,054 Fold : 0	 Epoch : 36	 Training Loss : 0.007934366125222627
+2022-02-23 09:02:25,882 Fold : 0	 Epoch : 36	 Validation Loss 0.05310026647594686	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:02:51,263 Fold : 0	 Epoch : 37	 Training Loss : 0.007730923307203089
+2022-02-23 09:02:52,093 Fold : 0	 Epoch : 37	 Validation Loss 0.054389770984506376	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:03:17,494 Fold : 0	 Epoch : 38	 Training Loss : 0.0077783537999494
+2022-02-23 09:03:18,306 Fold : 0	 Epoch : 38	 Validation Loss 0.05662979850044044	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:03:43,788 Fold : 0	 Epoch : 39	 Training Loss : 0.011420006664203746
+2022-02-23 09:03:44,609 Fold : 0	 Epoch : 39	 Validation Loss 0.056840695664644815	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:04:09,966 Fold : 0	 Epoch : 40	 Training Loss : 0.010630312422498329
+2022-02-23 09:04:10,775 Fold : 0	 Epoch : 40	 Validation Loss 0.05953393538052646	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:04:36,230 Fold : 0	 Epoch : 41	 Training Loss : 0.00918124544841703
+2022-02-23 09:04:37,053 Fold : 0	 Epoch : 41	 Validation Loss 0.059058748508015506	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:05:02,491 Fold : 0	 Epoch : 42	 Training Loss : 0.007878003502680388
+2022-02-23 09:05:03,297 Fold : 0	 Epoch : 42	 Validation Loss 0.05935453964719692	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:05:28,752 Fold : 0	 Epoch : 43	 Training Loss : 0.007745730042058442
+2022-02-23 09:05:29,552 Fold : 0	 Epoch : 43	 Validation Loss 0.07256882157749854	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:05:54,897 Fold : 0	 Epoch : 44	 Training Loss : 0.007433433043063685
+2022-02-23 09:05:55,712 Fold : 0	 Epoch : 44	 Validation Loss 0.06875997874885798	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:06:21,056 Fold : 0	 Epoch : 45	 Training Loss : 0.007524497732187488
+2022-02-23 09:06:21,874 Fold : 0	 Epoch : 45	 Validation Loss 0.06847574332585701	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:06:47,326 Fold : 0	 Epoch : 46	 Training Loss : 0.007298430961132648
+2022-02-23 09:06:48,148 Fold : 0	 Epoch : 46	 Validation Loss 0.06621943442867352	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:07:13,382 Fold : 0	 Epoch : 47	 Training Loss : 0.0072434905180541265
+2022-02-23 09:07:14,183 Fold : 0	 Epoch : 47	 Validation Loss 0.06678642525086896	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:07:39,607 Fold : 0	 Epoch : 48	 Training Loss : 0.00724312145030126
+2022-02-23 09:07:40,403 Fold : 0	 Epoch : 48	 Validation Loss 0.09164203665792368	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:08:05,667 Fold : 0	 Epoch : 49	 Training Loss : 0.0071648331203115435
+2022-02-23 09:08:06,484 Fold : 0	 Epoch : 49	 Validation Loss 0.06674924256423345	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:08:31,779 Fold : 0	 Epoch : 50	 Training Loss : 0.007240922896016855
+2022-02-23 09:08:32,587 Fold : 0	 Epoch : 50	 Validation Loss 0.061394095402927354	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:08:32,587 Fold 0 Finished. Saving best Accuracy 1.0
+2022-02-23 09:08:32,588 Starting Fold 2
+2022-02-23 09:08:58,181 Fold : 1	 Epoch : 1	 Training Loss : 0.4045752268284559
+2022-02-23 09:08:59,037 Fold : 1	 Epoch : 1	 Validation Loss 0.16197760288531965	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:09:01,041 Best Model saved with accuracy 0.995
+2022-02-23 09:09:26,396 Fold : 1	 Epoch : 2	 Training Loss : 0.1436630107595452
+2022-02-23 09:09:27,216 Fold : 1	 Epoch : 2	 Validation Loss 0.07637508843953793	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:09:41,047 Best Model saved with accuracy 1.0
+2022-02-23 09:10:06,383 Fold : 1	 Epoch : 3	 Training Loss : 0.08356989886877793
+2022-02-23 09:10:07,230 Fold : 1	 Epoch : 3	 Validation Loss 0.05800952504460628	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:10:32,360 Fold : 1	 Epoch : 4	 Training Loss : 0.07142222784126975
+2022-02-23 09:10:33,184 Fold : 1	 Epoch : 4	 Validation Loss 0.06629602381816277	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:10:58,450 Fold : 1	 Epoch : 5	 Training Loss : 0.04844163339917681
+2022-02-23 09:10:59,284 Fold : 1	 Epoch : 5	 Validation Loss 0.04456166364252567	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:11:24,479 Fold : 1	 Epoch : 6	 Training Loss : 0.0445953177820359
+2022-02-23 09:11:25,290 Fold : 1	 Epoch : 6	 Validation Loss 0.05159958982123779	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:11:50,699 Fold : 1	 Epoch : 7	 Training Loss : 0.03340359659965283
+2022-02-23 09:11:51,543 Fold : 1	 Epoch : 7	 Validation Loss 0.030566464034983747	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:12:16,722 Fold : 1	 Epoch : 8	 Training Loss : 0.02837127088735412
+2022-02-23 09:12:17,565 Fold : 1	 Epoch : 8	 Validation Loss 0.043557340709062725	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:12:42,880 Fold : 1	 Epoch : 9	 Training Loss : 0.026938811909141287
+2022-02-23 09:12:43,729 Fold : 1	 Epoch : 9	 Validation Loss 0.022263486583072405	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:13:09,029 Fold : 1	 Epoch : 10	 Training Loss : 0.024356490225597684
+2022-02-23 09:13:09,860 Fold : 1	 Epoch : 10	 Validation Loss 0.03991889523772093	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:13:35,148 Fold : 1	 Epoch : 11	 Training Loss : 0.02163112413836643
+2022-02-23 09:13:35,968 Fold : 1	 Epoch : 11	 Validation Loss 0.037008618721022055	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:14:01,371 Fold : 1	 Epoch : 12	 Training Loss : 0.02044098302472516
+2022-02-23 09:14:02,211 Fold : 1	 Epoch : 12	 Validation Loss 0.03684090543538332	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:14:27,445 Fold : 1	 Epoch : 13	 Training Loss : 0.019020755134988576
+2022-02-23 09:14:28,279 Fold : 1	 Epoch : 13	 Validation Loss 0.03547542685499558	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:14:53,631 Fold : 1	 Epoch : 14	 Training Loss : 0.018804350580986857
+2022-02-23 09:14:54,467 Fold : 1	 Epoch : 14	 Validation Loss 0.03874062990339903	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:15:19,899 Fold : 1	 Epoch : 15	 Training Loss : 0.017444163041156053
+2022-02-23 09:15:20,744 Fold : 1	 Epoch : 15	 Validation Loss 0.034642320520316176	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:15:46,023 Fold : 1	 Epoch : 16	 Training Loss : 0.01706306907414858
+2022-02-23 09:15:46,864 Fold : 1	 Epoch : 16	 Validation Loss 0.03518873890145467	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:16:12,113 Fold : 1	 Epoch : 17	 Training Loss : 0.015612311536512737
+2022-02-23 09:16:12,967 Fold : 1	 Epoch : 17	 Validation Loss 0.053534452588512346	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:16:38,300 Fold : 1	 Epoch : 18	 Training Loss : 0.013343595109680402
+2022-02-23 09:16:39,147 Fold : 1	 Epoch : 18	 Validation Loss 0.04553039733750316	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:17:04,366 Fold : 1	 Epoch : 19	 Training Loss : 0.022431124309410473
+2022-02-23 09:17:05,212 Fold : 1	 Epoch : 19	 Validation Loss 0.10692723722268756	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:17:30,507 Fold : 1	 Epoch : 20	 Training Loss : 0.03278771012472654
+2022-02-23 09:17:31,354 Fold : 1	 Epoch : 20	 Validation Loss 0.072435566295798	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:17:56,677 Fold : 1	 Epoch : 21	 Training Loss : 0.019689020318245248
+2022-02-23 09:17:57,501 Fold : 1	 Epoch : 21	 Validation Loss 0.029013613812052287	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:18:22,738 Fold : 1	 Epoch : 22	 Training Loss : 0.034901463746791705
+2022-02-23 09:18:23,585 Fold : 1	 Epoch : 22	 Validation Loss 0.0110756354764677	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:18:48,981 Fold : 1	 Epoch : 23	 Training Loss : 0.019279989995993674
+2022-02-23 09:18:49,838 Fold : 1	 Epoch : 23	 Validation Loss 0.04874436747139463	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:19:15,127 Fold : 1	 Epoch : 24	 Training Loss : 0.018691201974953792
+2022-02-23 09:19:15,967 Fold : 1	 Epoch : 24	 Validation Loss 0.008776180553608216	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:19:41,354 Fold : 1	 Epoch : 25	 Training Loss : 0.01104626098614452
+2022-02-23 09:19:42,201 Fold : 1	 Epoch : 25	 Validation Loss 0.00578896884018412	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:20:07,477 Fold : 1	 Epoch : 26	 Training Loss : 0.013594199400228848
+2022-02-23 09:20:08,313 Fold : 1	 Epoch : 26	 Validation Loss 0.007198166675292528	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:20:33,628 Fold : 1	 Epoch : 27	 Training Loss : 0.009984410852276986
+2022-02-23 09:20:34,453 Fold : 1	 Epoch : 27	 Validation Loss 0.011785142875921268	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:20:59,713 Fold : 1	 Epoch : 28	 Training Loss : 0.009468991874850221
+2022-02-23 09:21:00,547 Fold : 1	 Epoch : 28	 Validation Loss 0.0135486288031993	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:21:25,891 Fold : 1	 Epoch : 29	 Training Loss : 0.00961390370087299
+2022-02-23 09:21:26,749 Fold : 1	 Epoch : 29	 Validation Loss 0.014447267937402312	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:21:51,964 Fold : 1	 Epoch : 30	 Training Loss : 0.010504953939484299
+2022-02-23 09:21:52,800 Fold : 1	 Epoch : 30	 Validation Loss 0.04305875052411396	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:22:18,221 Fold : 1	 Epoch : 31	 Training Loss : 0.009501474645471067
+2022-02-23 09:22:19,064 Fold : 1	 Epoch : 31	 Validation Loss 0.04499841895169364	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:22:44,411 Fold : 1	 Epoch : 32	 Training Loss : 0.022898035733045878
+2022-02-23 09:22:45,276 Fold : 1	 Epoch : 32	 Validation Loss 0.03207359206862748	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:23:10,689 Fold : 1	 Epoch : 33	 Training Loss : 0.01473300117400608
+2022-02-23 09:23:11,557 Fold : 1	 Epoch : 33	 Validation Loss 0.02531478124169203	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:23:36,900 Fold : 1	 Epoch : 34	 Training Loss : 0.008648372126377321
+2022-02-23 09:23:37,731 Fold : 1	 Epoch : 34	 Validation Loss 0.025302902311803058	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:24:02,941 Fold : 1	 Epoch : 35	 Training Loss : 0.010226052042396207
+2022-02-23 09:24:03,778 Fold : 1	 Epoch : 35	 Validation Loss 0.0295027750186049	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:24:29,182 Fold : 1	 Epoch : 36	 Training Loss : 0.008630187999057983
+2022-02-23 09:24:30,024 Fold : 1	 Epoch : 36	 Validation Loss 0.00805054191285028	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:24:55,318 Fold : 1	 Epoch : 37	 Training Loss : 0.008299251743924938
+2022-02-23 09:24:56,162 Fold : 1	 Epoch : 37	 Validation Loss 0.0065318986666030605	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:25:21,461 Fold : 1	 Epoch : 38	 Training Loss : 0.008225017863359036
+2022-02-23 09:25:22,293 Fold : 1	 Epoch : 38	 Validation Loss 0.006194609217345715	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:25:47,536 Fold : 1	 Epoch : 39	 Training Loss : 0.009214132482676567
+2022-02-23 09:25:48,351 Fold : 1	 Epoch : 39	 Validation Loss 0.012410294980956959	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:26:13,695 Fold : 1	 Epoch : 40	 Training Loss : 0.01348295496843223
+2022-02-23 09:26:14,532 Fold : 1	 Epoch : 40	 Validation Loss 0.006806805497035384	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:26:39,832 Fold : 1	 Epoch : 41	 Training Loss : 0.01044851122631891
+2022-02-23 09:26:40,669 Fold : 1	 Epoch : 41	 Validation Loss 0.006713340094742866	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:27:06,006 Fold : 1	 Epoch : 42	 Training Loss : 0.007777740896147277
+2022-02-23 09:27:06,830 Fold : 1	 Epoch : 42	 Validation Loss 0.006410532111588579	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:27:32,103 Fold : 1	 Epoch : 43	 Training Loss : 0.007639441479113884
+2022-02-23 09:27:32,940 Fold : 1	 Epoch : 43	 Validation Loss 0.006257698190613435	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:27:58,325 Fold : 1	 Epoch : 44	 Training Loss : 0.007810243375258453
+2022-02-23 09:27:59,162 Fold : 1	 Epoch : 44	 Validation Loss 0.0062868114596662614	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:28:24,580 Fold : 1	 Epoch : 45	 Training Loss : 0.007687744845627874
+2022-02-23 09:28:25,401 Fold : 1	 Epoch : 45	 Validation Loss 0.0062541764122075755	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:28:50,713 Fold : 1	 Epoch : 46	 Training Loss : 0.007909521404404327
+2022-02-23 09:28:51,554 Fold : 1	 Epoch : 46	 Validation Loss 0.0060659312786391145	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:29:16,969 Fold : 1	 Epoch : 47	 Training Loss : 0.010745044321603408
+2022-02-23 09:29:17,820 Fold : 1	 Epoch : 47	 Validation Loss 0.005845686814819391	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:29:43,085 Fold : 1	 Epoch : 48	 Training Loss : 0.0075409029325653265
+2022-02-23 09:29:43,944 Fold : 1	 Epoch : 48	 Validation Loss 0.005780666171071621	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:30:09,393 Fold : 1	 Epoch : 49	 Training Loss : 0.00746538086657113
+2022-02-23 09:30:10,238 Fold : 1	 Epoch : 49	 Validation Loss 0.005685789725528314	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:30:35,528 Fold : 1	 Epoch : 50	 Training Loss : 0.0074867144077351054
+2022-02-23 09:30:36,362 Fold : 1	 Epoch : 50	 Validation Loss 0.005669968310170448	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:30:36,363 Fold 1 Finished. Saving best Accuracy 1.0
+2022-02-23 09:30:36,364 Starting Fold 3
+2022-02-23 09:31:01,662 Fold : 2	 Epoch : 1	 Training Loss : 0.38723861226545914
+2022-02-23 09:31:02,594 Fold : 2	 Epoch : 1	 Validation Loss 0.16315270903018805	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:31:04,572 Best Model saved with accuracy 0.98
+2022-02-23 09:31:29,627 Fold : 2	 Epoch : 2	 Training Loss : 0.11956346503991101
+2022-02-23 09:31:30,595 Fold : 2	 Epoch : 2	 Validation Loss 0.08821991114662243	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:31:45,144 Best Model saved with accuracy 0.985
+2022-02-23 09:32:10,165 Fold : 2	 Epoch : 3	 Training Loss : 0.06704979913774878
+2022-02-23 09:32:11,117 Fold : 2	 Epoch : 3	 Validation Loss 0.09443316422402859	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:32:36,012 Fold : 2	 Epoch : 4	 Training Loss : 0.06122821399808994
+2022-02-23 09:32:36,971 Fold : 2	 Epoch : 4	 Validation Loss 0.08746903948485851	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:33:01,831 Fold : 2	 Epoch : 5	 Training Loss : 0.037947415124758015
+2022-02-23 09:33:02,791 Fold : 2	 Epoch : 5	 Validation Loss 0.0841639179449815	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:33:27,660 Fold : 2	 Epoch : 6	 Training Loss : 0.030214434156992605
+2022-02-23 09:33:28,616 Fold : 2	 Epoch : 6	 Validation Loss 0.09447482600808144	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:33:53,588 Fold : 2	 Epoch : 7	 Training Loss : 0.04501746115939958
+2022-02-23 09:33:54,542 Fold : 2	 Epoch : 7	 Validation Loss 0.15816172069081894	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 09:34:19,470 Fold : 2	 Epoch : 8	 Training Loss : 0.043123852070753595
+2022-02-23 09:34:20,416 Fold : 2	 Epoch : 8	 Validation Loss 0.16045706368123108	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 09:34:45,369 Fold : 2	 Epoch : 9	 Training Loss : 0.0313270803890191
+2022-02-23 09:34:46,342 Fold : 2	 Epoch : 9	 Validation Loss 0.10380749203837834	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 09:35:11,294 Fold : 2	 Epoch : 10	 Training Loss : 0.01965255370929039
+2022-02-23 09:35:12,211 Fold : 2	 Epoch : 10	 Validation Loss 0.08721937077979629	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:35:37,267 Fold : 2	 Epoch : 11	 Training Loss : 0.0192602619977801
+2022-02-23 09:35:38,239 Fold : 2	 Epoch : 11	 Validation Loss 0.08434306249882166	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:36:03,166 Fold : 2	 Epoch : 12	 Training Loss : 0.014828185717176114
+2022-02-23 09:36:04,097 Fold : 2	 Epoch : 12	 Validation Loss 0.08379821364696209	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:36:28,969 Fold : 2	 Epoch : 13	 Training Loss : 0.013605567165151504
+2022-02-23 09:36:29,933 Fold : 2	 Epoch : 13	 Validation Loss 0.08629056252539158	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:36:54,923 Fold : 2	 Epoch : 14	 Training Loss : 0.013508457931623395
+2022-02-23 09:36:55,860 Fold : 2	 Epoch : 14	 Validation Loss 0.08804939386363213	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:37:20,788 Fold : 2	 Epoch : 15	 Training Loss : 0.01498765529166641
+2022-02-23 09:37:21,727 Fold : 2	 Epoch : 15	 Validation Loss 0.08586702925654557	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:37:46,712 Fold : 2	 Epoch : 16	 Training Loss : 0.01519980319010626
+2022-02-23 09:37:47,656 Fold : 2	 Epoch : 16	 Validation Loss 0.07757379931326096	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:38:12,600 Fold : 2	 Epoch : 17	 Training Loss : 0.014794543302351875
+2022-02-23 09:38:13,567 Fold : 2	 Epoch : 17	 Validation Loss 0.1242327275685966	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:38:38,569 Fold : 2	 Epoch : 18	 Training Loss : 0.016522460084940706
+2022-02-23 09:38:39,533 Fold : 2	 Epoch : 18	 Validation Loss 0.1450013593197442	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 09:39:04,458 Fold : 2	 Epoch : 19	 Training Loss : 0.0201475129121848
+2022-02-23 09:39:05,397 Fold : 2	 Epoch : 19	 Validation Loss 0.1311381348193838	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:39:30,399 Fold : 2	 Epoch : 20	 Training Loss : 0.04263249604680043
+2022-02-23 09:39:31,322 Fold : 2	 Epoch : 20	 Validation Loss 0.16857542738748285	 accuracy : 0.96	 TP : 192	 FP : 8	
+2022-02-23 09:39:56,353 Fold : 2	 Epoch : 21	 Training Loss : 0.024661756368004717
+2022-02-23 09:39:57,313 Fold : 2	 Epoch : 21	 Validation Loss 0.107797459878314	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:40:22,411 Fold : 2	 Epoch : 22	 Training Loss : 0.01937901043441213
+2022-02-23 09:40:23,366 Fold : 2	 Epoch : 22	 Validation Loss 0.12123698379414585	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:40:48,439 Fold : 2	 Epoch : 23	 Training Loss : 0.012605514495849743
+2022-02-23 09:40:49,382 Fold : 2	 Epoch : 23	 Validation Loss 0.10758786318966976	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:41:14,441 Fold : 2	 Epoch : 24	 Training Loss : 0.012739305103813032
+2022-02-23 09:41:15,388 Fold : 2	 Epoch : 24	 Validation Loss 0.1083030364332864	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:41:40,464 Fold : 2	 Epoch : 25	 Training Loss : 0.010517763659923471
+2022-02-23 09:41:41,434 Fold : 2	 Epoch : 25	 Validation Loss 0.10463885644164223	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:42:06,555 Fold : 2	 Epoch : 26	 Training Loss : 0.008884110311295703
+2022-02-23 09:42:07,528 Fold : 2	 Epoch : 26	 Validation Loss 0.1041783056436823	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:42:32,652 Fold : 2	 Epoch : 27	 Training Loss : 0.00906501418129275
+2022-02-23 09:42:33,594 Fold : 2	 Epoch : 27	 Validation Loss 0.10476138306638369	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:42:58,641 Fold : 2	 Epoch : 28	 Training Loss : 0.013910099261140983
+2022-02-23 09:42:59,605 Fold : 2	 Epoch : 28	 Validation Loss 0.10737694346775803	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:43:24,696 Fold : 2	 Epoch : 29	 Training Loss : 0.008390411846838626
+2022-02-23 09:43:25,650 Fold : 2	 Epoch : 29	 Validation Loss 0.13821165014703113	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:43:50,579 Fold : 2	 Epoch : 30	 Training Loss : 0.008325327832218525
+2022-02-23 09:43:51,514 Fold : 2	 Epoch : 30	 Validation Loss 0.10531165398872243	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:44:16,511 Fold : 2	 Epoch : 31	 Training Loss : 0.0077298517187175874
+2022-02-23 09:44:17,465 Fold : 2	 Epoch : 31	 Validation Loss 0.10590864705423322	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:44:42,494 Fold : 2	 Epoch : 32	 Training Loss : 0.007767984921104342
+2022-02-23 09:44:43,428 Fold : 2	 Epoch : 32	 Validation Loss 0.10164685935999912	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:45:08,547 Fold : 2	 Epoch : 33	 Training Loss : 0.007640303408801888
+2022-02-23 09:45:09,492 Fold : 2	 Epoch : 33	 Validation Loss 0.1016500390922794	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:45:34,706 Fold : 2	 Epoch : 34	 Training Loss : 0.006989664083188732
+2022-02-23 09:45:35,681 Fold : 2	 Epoch : 34	 Validation Loss 0.10176937978786345	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:46:00,685 Fold : 2	 Epoch : 35	 Training Loss : 0.007045031384872605
+2022-02-23 09:46:01,643 Fold : 2	 Epoch : 35	 Validation Loss 0.10228439723141491	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:46:26,720 Fold : 2	 Epoch : 36	 Training Loss : 0.0066763443308965565
+2022-02-23 09:46:27,680 Fold : 2	 Epoch : 36	 Validation Loss 0.10248489933124241	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:46:52,767 Fold : 2	 Epoch : 37	 Training Loss : 0.006443888561209731
+2022-02-23 09:46:53,736 Fold : 2	 Epoch : 37	 Validation Loss 0.10311485386381929	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:47:18,748 Fold : 2	 Epoch : 38	 Training Loss : 0.007340510523395746
+2022-02-23 09:47:19,706 Fold : 2	 Epoch : 38	 Validation Loss 0.10850590532824683	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:47:44,782 Fold : 2	 Epoch : 39	 Training Loss : 0.01211696648221862
+2022-02-23 09:47:45,765 Fold : 2	 Epoch : 39	 Validation Loss 0.16436089251118785	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:48:10,824 Fold : 2	 Epoch : 40	 Training Loss : 0.012121830994146876
+2022-02-23 09:48:11,754 Fold : 2	 Epoch : 40	 Validation Loss 0.12369311215857473	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 09:48:36,767 Fold : 2	 Epoch : 41	 Training Loss : 0.008876790482775374
+2022-02-23 09:48:37,720 Fold : 2	 Epoch : 41	 Validation Loss 0.11091400122341628	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:49:02,880 Fold : 2	 Epoch : 42	 Training Loss : 0.01006518030564101
+2022-02-23 09:49:03,844 Fold : 2	 Epoch : 42	 Validation Loss 0.1252927607856691	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:49:28,904 Fold : 2	 Epoch : 43	 Training Loss : 0.00837913521952162
+2022-02-23 09:49:29,866 Fold : 2	 Epoch : 43	 Validation Loss 0.12198323863916673	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:49:55,018 Fold : 2	 Epoch : 44	 Training Loss : 0.0066688470417700174
+2022-02-23 09:49:55,951 Fold : 2	 Epoch : 44	 Validation Loss 0.12373865832789586	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:50:21,106 Fold : 2	 Epoch : 45	 Training Loss : 0.0061393080738655825
+2022-02-23 09:50:22,058 Fold : 2	 Epoch : 45	 Validation Loss 0.1241060894054289	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:50:47,114 Fold : 2	 Epoch : 46	 Training Loss : 0.006356671689510611
+2022-02-23 09:50:48,026 Fold : 2	 Epoch : 46	 Validation Loss 0.12411767871190722	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:51:13,159 Fold : 2	 Epoch : 47	 Training Loss : 0.005923825232977313
+2022-02-23 09:51:14,104 Fold : 2	 Epoch : 47	 Validation Loss 0.12386936869902107	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:51:39,158 Fold : 2	 Epoch : 48	 Training Loss : 0.00626111869808353
+2022-02-23 09:51:40,134 Fold : 2	 Epoch : 48	 Validation Loss 0.1265038273547991	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:52:05,129 Fold : 2	 Epoch : 49	 Training Loss : 0.005644369555479248
+2022-02-23 09:52:06,068 Fold : 2	 Epoch : 49	 Validation Loss 0.12663185491692275	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:52:31,089 Fold : 2	 Epoch : 50	 Training Loss : 0.005930781238670794
+2022-02-23 09:52:32,012 Fold : 2	 Epoch : 50	 Validation Loss 0.12667106568383482	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:52:32,013 Fold 2 Finished. Saving best Accuracy 0.985
+2022-02-23 09:52:32,014 Starting Fold 4
+2022-02-23 09:52:57,396 Fold : 3	 Epoch : 1	 Training Loss : 0.3848561034537852
+2022-02-23 09:52:58,302 Fold : 3	 Epoch : 1	 Validation Loss 0.12490566533345443	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:53:00,300 Best Model saved with accuracy 0.995
+2022-02-23 09:53:25,450 Fold : 3	 Epoch : 2	 Training Loss : 0.11295676993073098
+2022-02-23 09:53:26,335 Fold : 3	 Epoch : 2	 Validation Loss 0.05938275702870809	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:53:39,794 Best Model saved with accuracy 1.0
+2022-02-23 09:54:05,001 Fold : 3	 Epoch : 3	 Training Loss : 0.07822457902199988
+2022-02-23 09:54:05,877 Fold : 3	 Epoch : 3	 Validation Loss 0.036084097308608204	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:54:30,877 Fold : 3	 Epoch : 4	 Training Loss : 0.04986346601175943
+2022-02-23 09:54:31,753 Fold : 3	 Epoch : 4	 Validation Loss 0.0265863064963084	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 09:54:56,825 Fold : 3	 Epoch : 5	 Training Loss : 0.04256512823381594
+2022-02-23 09:54:57,703 Fold : 3	 Epoch : 5	 Validation Loss 0.041473663197113916	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:55:22,734 Fold : 3	 Epoch : 6	 Training Loss : 0.037848294920487593
+2022-02-23 09:55:23,619 Fold : 3	 Epoch : 6	 Validation Loss 0.03909569985878009	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:55:48,688 Fold : 3	 Epoch : 7	 Training Loss : 0.03282890290055158
+2022-02-23 09:55:49,560 Fold : 3	 Epoch : 7	 Validation Loss 0.04601294676271769	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:56:14,722 Fold : 3	 Epoch : 8	 Training Loss : 0.028359019446984997
+2022-02-23 09:56:15,622 Fold : 3	 Epoch : 8	 Validation Loss 0.030503769261905782	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:56:40,705 Fold : 3	 Epoch : 9	 Training Loss : 0.037396627253786265
+2022-02-23 09:56:41,603 Fold : 3	 Epoch : 9	 Validation Loss 0.040681940933259636	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:57:06,658 Fold : 3	 Epoch : 10	 Training Loss : 0.02805282300271626
+2022-02-23 09:57:07,544 Fold : 3	 Epoch : 10	 Validation Loss 0.037036510184407234	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:57:32,706 Fold : 3	 Epoch : 11	 Training Loss : 0.02930278121909526
+2022-02-23 09:57:33,596 Fold : 3	 Epoch : 11	 Validation Loss 0.03675019902248795	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:57:58,699 Fold : 3	 Epoch : 12	 Training Loss : 0.026871598837065643
+2022-02-23 09:57:59,569 Fold : 3	 Epoch : 12	 Validation Loss 0.04932203903221167	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 09:58:24,559 Fold : 3	 Epoch : 13	 Training Loss : 0.026397648600063155
+2022-02-23 09:58:25,449 Fold : 3	 Epoch : 13	 Validation Loss 0.028083751622874003	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 09:58:50,532 Fold : 3	 Epoch : 14	 Training Loss : 0.015557914053455793
+2022-02-23 09:58:51,446 Fold : 3	 Epoch : 14	 Validation Loss 0.03418381232768297	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 09:59:16,583 Fold : 3	 Epoch : 15	 Training Loss : 0.01728024922444352
+2022-02-23 09:59:17,465 Fold : 3	 Epoch : 15	 Validation Loss 0.035413486489023156	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 09:59:42,716 Fold : 3	 Epoch : 16	 Training Loss : 0.018413713122884343
+2022-02-23 09:59:43,628 Fold : 3	 Epoch : 16	 Validation Loss 0.03307645424054219	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:00:08,881 Fold : 3	 Epoch : 17	 Training Loss : 0.014450494782067835
+2022-02-23 10:00:09,800 Fold : 3	 Epoch : 17	 Validation Loss 0.02942441414611844	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:00:35,047 Fold : 3	 Epoch : 18	 Training Loss : 0.011096980181589191
+2022-02-23 10:00:35,949 Fold : 3	 Epoch : 18	 Validation Loss 0.024220851679834034	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:01:01,059 Fold : 3	 Epoch : 19	 Training Loss : 0.010682631733029016
+2022-02-23 10:01:01,958 Fold : 3	 Epoch : 19	 Validation Loss 0.026915782829746604	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:01:27,269 Fold : 3	 Epoch : 20	 Training Loss : 0.00998539308160876
+2022-02-23 10:01:28,168 Fold : 3	 Epoch : 20	 Validation Loss 0.028339037850785714	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:01:53,392 Fold : 3	 Epoch : 21	 Training Loss : 0.009787213443944762
+2022-02-23 10:01:54,267 Fold : 3	 Epoch : 21	 Validation Loss 0.03311837915904247	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:02:19,515 Fold : 3	 Epoch : 22	 Training Loss : 0.009746033276314847
+2022-02-23 10:02:20,402 Fold : 3	 Epoch : 22	 Validation Loss 0.03250495118733782	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:02:45,713 Fold : 3	 Epoch : 23	 Training Loss : 0.008981803417555057
+2022-02-23 10:02:46,607 Fold : 3	 Epoch : 23	 Validation Loss 0.028389824679694496	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:03:11,767 Fold : 3	 Epoch : 24	 Training Loss : 0.008893647825711273
+2022-02-23 10:03:12,682 Fold : 3	 Epoch : 24	 Validation Loss 0.02387681449405276	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:03:37,872 Fold : 3	 Epoch : 25	 Training Loss : 0.008892928578591506
+2022-02-23 10:03:38,754 Fold : 3	 Epoch : 25	 Validation Loss 0.02769837501602104	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:04:04,003 Fold : 3	 Epoch : 26	 Training Loss : 0.008389409943317463
+2022-02-23 10:04:04,898 Fold : 3	 Epoch : 26	 Validation Loss 0.02672347927895876	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:04:30,110 Fold : 3	 Epoch : 27	 Training Loss : 0.015363046664528415
+2022-02-23 10:04:30,997 Fold : 3	 Epoch : 27	 Validation Loss 0.010162540657732349	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:04:56,313 Fold : 3	 Epoch : 28	 Training Loss : 0.008380183440749533
+2022-02-23 10:04:57,222 Fold : 3	 Epoch : 28	 Validation Loss 0.009656394437815134	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:05:22,510 Fold : 3	 Epoch : 29	 Training Loss : 0.008782202423649974
+2022-02-23 10:05:23,421 Fold : 3	 Epoch : 29	 Validation Loss 0.011343864903140526	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:05:48,649 Fold : 3	 Epoch : 30	 Training Loss : 0.010042466320945615
+2022-02-23 10:05:49,552 Fold : 3	 Epoch : 30	 Validation Loss 0.00818720214570371	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:06:14,697 Fold : 3	 Epoch : 31	 Training Loss : 0.009093230845922205
+2022-02-23 10:06:15,649 Fold : 3	 Epoch : 31	 Validation Loss 0.009222490480169654	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:06:40,851 Fold : 3	 Epoch : 32	 Training Loss : 0.007488044816584859
+2022-02-23 10:06:41,732 Fold : 3	 Epoch : 32	 Validation Loss 0.013572056983740857	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:07:06,903 Fold : 3	 Epoch : 33	 Training Loss : 0.011829485203114538
+2022-02-23 10:07:07,808 Fold : 3	 Epoch : 33	 Validation Loss 0.014448802989835922	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:07:33,033 Fold : 3	 Epoch : 34	 Training Loss : 0.01543796866150972
+2022-02-23 10:07:33,936 Fold : 3	 Epoch : 34	 Validation Loss 0.02771968692720223	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:07:58,946 Fold : 3	 Epoch : 35	 Training Loss : 0.007536922667765923
+2022-02-23 10:07:59,845 Fold : 3	 Epoch : 35	 Validation Loss 0.0240584288795407	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:08:24,947 Fold : 3	 Epoch : 36	 Training Loss : 0.0072719792338570444
+2022-02-23 10:08:25,851 Fold : 3	 Epoch : 36	 Validation Loss 0.023831693849597987	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:08:51,161 Fold : 3	 Epoch : 37	 Training Loss : 0.007105363088027973
+2022-02-23 10:08:52,055 Fold : 3	 Epoch : 37	 Validation Loss 0.026271713234914038	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:09:17,199 Fold : 3	 Epoch : 38	 Training Loss : 0.006961146785345461
+2022-02-23 10:09:18,106 Fold : 3	 Epoch : 38	 Validation Loss 0.026687060912641194	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:09:43,316 Fold : 3	 Epoch : 39	 Training Loss : 0.0069962906511916246
+2022-02-23 10:09:44,221 Fold : 3	 Epoch : 39	 Validation Loss 0.025908825525011007	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:10:09,461 Fold : 3	 Epoch : 40	 Training Loss : 0.006817573733444858
+2022-02-23 10:10:10,352 Fold : 3	 Epoch : 40	 Validation Loss 0.025977586646779224	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:10:35,541 Fold : 3	 Epoch : 41	 Training Loss : 0.006969452079959281
+2022-02-23 10:10:36,454 Fold : 3	 Epoch : 41	 Validation Loss 0.02055772423493461	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:11:01,642 Fold : 3	 Epoch : 42	 Training Loss : 0.006795426088501699
+2022-02-23 10:11:02,546 Fold : 3	 Epoch : 42	 Validation Loss 0.0204701333736571	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:11:27,699 Fold : 3	 Epoch : 43	 Training Loss : 0.006718623713823035
+2022-02-23 10:11:28,622 Fold : 3	 Epoch : 43	 Validation Loss 0.021342706105385262	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:11:53,800 Fold : 3	 Epoch : 44	 Training Loss : 0.006668570085561701
+2022-02-23 10:11:54,688 Fold : 3	 Epoch : 44	 Validation Loss 0.020767498806190606	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:12:19,974 Fold : 3	 Epoch : 45	 Training Loss : 0.006650543027457648
+2022-02-23 10:12:20,888 Fold : 3	 Epoch : 45	 Validation Loss 0.023874303433471	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:12:46,028 Fold : 3	 Epoch : 46	 Training Loss : 0.006552371341967955
+2022-02-23 10:12:46,921 Fold : 3	 Epoch : 46	 Validation Loss 0.021569226492339603	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:13:12,112 Fold : 3	 Epoch : 47	 Training Loss : 0.006456437576811628
+2022-02-23 10:13:12,996 Fold : 3	 Epoch : 47	 Validation Loss 0.020967635299222402	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:13:38,226 Fold : 3	 Epoch : 48	 Training Loss : 0.006499140372657816
+2022-02-23 10:13:39,147 Fold : 3	 Epoch : 48	 Validation Loss 0.020238251890987158	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:14:04,277 Fold : 3	 Epoch : 49	 Training Loss : 0.006425259220122825
+2022-02-23 10:14:05,156 Fold : 3	 Epoch : 49	 Validation Loss 0.01904031595824143	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:14:30,445 Fold : 3	 Epoch : 50	 Training Loss : 0.006429707045234474
+2022-02-23 10:14:31,335 Fold : 3	 Epoch : 50	 Validation Loss 0.019147335327803515	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:14:31,336 Fold 3 Finished. Saving best Accuracy 1.0
+2022-02-23 10:14:31,337 Starting Fold 5
+2022-02-23 10:14:56,943 Fold : 4	 Epoch : 1	 Training Loss : 0.3760158736923976
+2022-02-23 10:14:57,794 Fold : 4	 Epoch : 1	 Validation Loss 0.16889834174743065	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:14:59,786 Best Model saved with accuracy 0.975
+2022-02-23 10:15:25,010 Fold : 4	 Epoch : 2	 Training Loss : 0.10567870140740913
+2022-02-23 10:15:25,875 Fold : 4	 Epoch : 2	 Validation Loss 0.140587673164331	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:15:51,357 Fold : 4	 Epoch : 3	 Training Loss : 0.07032043967462544
+2022-02-23 10:15:52,200 Fold : 4	 Epoch : 3	 Validation Loss 0.24042455364878362	 accuracy : 0.93	 TP : 186	 FP : 14	
+2022-02-23 10:16:17,691 Fold : 4	 Epoch : 4	 Training Loss : 0.05331710358482918
+2022-02-23 10:16:18,540 Fold : 4	 Epoch : 4	 Validation Loss 0.13184198952065065	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:16:43,782 Fold : 4	 Epoch : 5	 Training Loss : 0.043850702715904584
+2022-02-23 10:16:44,646 Fold : 4	 Epoch : 5	 Validation Loss 0.09639452956616879	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:17:10,015 Fold : 4	 Epoch : 6	 Training Loss : 0.04431257177410381
+2022-02-23 10:17:10,883 Fold : 4	 Epoch : 6	 Validation Loss 0.11078147561504291	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:17:36,077 Fold : 4	 Epoch : 7	 Training Loss : 0.03540051670279354
+2022-02-23 10:17:36,945 Fold : 4	 Epoch : 7	 Validation Loss 0.11795078282459424	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:18:02,239 Fold : 4	 Epoch : 8	 Training Loss : 0.04124442823896451
+2022-02-23 10:18:03,080 Fold : 4	 Epoch : 8	 Validation Loss 0.2231261762432181	 accuracy : 0.94	 TP : 188	 FP : 12	
+2022-02-23 10:18:28,417 Fold : 4	 Epoch : 9	 Training Loss : 0.05282581867816459
+2022-02-23 10:18:29,267 Fold : 4	 Epoch : 9	 Validation Loss 0.09735270303029281	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:18:44,584 Best Model saved with accuracy 0.98
+2022-02-23 10:19:09,872 Fold : 4	 Epoch : 10	 Training Loss : 0.02692624568174194
+2022-02-23 10:19:10,741 Fold : 4	 Epoch : 10	 Validation Loss 0.10353889574225132	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:19:36,036 Fold : 4	 Epoch : 11	 Training Loss : 0.019850119748818024
+2022-02-23 10:19:36,886 Fold : 4	 Epoch : 11	 Validation Loss 0.10249577340884851	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:20:02,114 Fold : 4	 Epoch : 12	 Training Loss : 0.02164238483029684
+2022-02-23 10:20:02,956 Fold : 4	 Epoch : 12	 Validation Loss 0.11449912727738802	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:20:28,160 Fold : 4	 Epoch : 13	 Training Loss : 0.020771397893050953
+2022-02-23 10:20:29,016 Fold : 4	 Epoch : 13	 Validation Loss 0.11166890062248477	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:20:54,158 Fold : 4	 Epoch : 14	 Training Loss : 0.023238057877668843
+2022-02-23 10:20:55,020 Fold : 4	 Epoch : 14	 Validation Loss 0.12487736287025306	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:21:20,215 Fold : 4	 Epoch : 15	 Training Loss : 0.01863887142306859
+2022-02-23 10:21:21,038 Fold : 4	 Epoch : 15	 Validation Loss 0.1453367955982685	 accuracy : 0.96	 TP : 192	 FP : 8	
+2022-02-23 10:21:46,201 Fold : 4	 Epoch : 16	 Training Loss : 0.014126222127483093
+2022-02-23 10:21:47,040 Fold : 4	 Epoch : 16	 Validation Loss 0.11306665511801839	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:22:12,211 Fold : 4	 Epoch : 17	 Training Loss : 0.022777427212401693
+2022-02-23 10:22:13,057 Fold : 4	 Epoch : 17	 Validation Loss 0.15094202438082832	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:22:38,302 Fold : 4	 Epoch : 18	 Training Loss : 0.02053157382345359
+2022-02-23 10:22:39,153 Fold : 4	 Epoch : 18	 Validation Loss 0.10288865097726767	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:23:04,366 Fold : 4	 Epoch : 19	 Training Loss : 0.014374009408389352
+2022-02-23 10:23:05,243 Fold : 4	 Epoch : 19	 Validation Loss 0.1009602124014726	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:23:30,607 Fold : 4	 Epoch : 20	 Training Loss : 0.013855369374921014
+2022-02-23 10:23:31,437 Fold : 4	 Epoch : 20	 Validation Loss 0.09914133884012699	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 10:23:46,402 Best Model saved with accuracy 0.985
+2022-02-23 10:24:11,711 Fold : 4	 Epoch : 21	 Training Loss : 0.01057201761951936
+2022-02-23 10:24:12,545 Fold : 4	 Epoch : 21	 Validation Loss 0.0998908057808876	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 10:24:37,606 Fold : 4	 Epoch : 22	 Training Loss : 0.011460294930397399
+2022-02-23 10:24:38,472 Fold : 4	 Epoch : 22	 Validation Loss 0.13029762608214066	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:25:03,563 Fold : 4	 Epoch : 23	 Training Loss : 0.011474992524849117
+2022-02-23 10:25:04,390 Fold : 4	 Epoch : 23	 Validation Loss 0.1196065257446697	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:25:29,449 Fold : 4	 Epoch : 24	 Training Loss : 0.007068869778387514
+2022-02-23 10:25:30,309 Fold : 4	 Epoch : 24	 Validation Loss 0.13087209564848587	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:25:55,400 Fold : 4	 Epoch : 25	 Training Loss : 0.007708762288010413
+2022-02-23 10:25:56,244 Fold : 4	 Epoch : 25	 Validation Loss 0.12324562670591359	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:26:21,385 Fold : 4	 Epoch : 26	 Training Loss : 0.006746146717757385
+2022-02-23 10:26:22,240 Fold : 4	 Epoch : 26	 Validation Loss 0.1368977791414811	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:26:47,298 Fold : 4	 Epoch : 27	 Training Loss : 0.006319932815261252
+2022-02-23 10:26:48,127 Fold : 4	 Epoch : 27	 Validation Loss 0.10988038597413553	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:27:13,219 Fold : 4	 Epoch : 28	 Training Loss : 0.005833472848670291
+2022-02-23 10:27:14,057 Fold : 4	 Epoch : 28	 Validation Loss 0.11124971260030109	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:27:39,232 Fold : 4	 Epoch : 29	 Training Loss : 0.006082436338017162
+2022-02-23 10:27:40,098 Fold : 4	 Epoch : 29	 Validation Loss 0.11467224549358854	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:28:05,281 Fold : 4	 Epoch : 30	 Training Loss : 0.00564716627247565
+2022-02-23 10:28:06,117 Fold : 4	 Epoch : 30	 Validation Loss 0.14303833744130456	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:28:31,374 Fold : 4	 Epoch : 31	 Training Loss : 0.005598017351335979
+2022-02-23 10:28:32,228 Fold : 4	 Epoch : 31	 Validation Loss 0.11948608293627891	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:28:57,560 Fold : 4	 Epoch : 32	 Training Loss : 0.005364753946196288
+2022-02-23 10:28:58,401 Fold : 4	 Epoch : 32	 Validation Loss 0.11863425162692483	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:29:23,649 Fold : 4	 Epoch : 33	 Training Loss : 0.005415529767300801
+2022-02-23 10:29:24,491 Fold : 4	 Epoch : 33	 Validation Loss 0.11475160751993266	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:29:49,757 Fold : 4	 Epoch : 34	 Training Loss : 0.005261013964107926
+2022-02-23 10:29:50,590 Fold : 4	 Epoch : 34	 Validation Loss 0.1280765357033278	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:30:15,793 Fold : 4	 Epoch : 35	 Training Loss : 0.005391199126149461
+2022-02-23 10:30:16,611 Fold : 4	 Epoch : 35	 Validation Loss 0.13130045232649606	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:30:42,023 Fold : 4	 Epoch : 36	 Training Loss : 0.004979486753914638
+2022-02-23 10:30:42,853 Fold : 4	 Epoch : 36	 Validation Loss 0.11268375072484979	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:31:08,222 Fold : 4	 Epoch : 37	 Training Loss : 0.00477572317218541
+2022-02-23 10:31:09,070 Fold : 4	 Epoch : 37	 Validation Loss 0.11358690054084246	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:31:34,393 Fold : 4	 Epoch : 38	 Training Loss : 0.004777505873270067
+2022-02-23 10:31:35,242 Fold : 4	 Epoch : 38	 Validation Loss 0.11386581818358256	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:32:00,558 Fold : 4	 Epoch : 39	 Training Loss : 0.004629870233267346
+2022-02-23 10:32:01,414 Fold : 4	 Epoch : 39	 Validation Loss 0.11586724135738152	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:32:26,717 Fold : 4	 Epoch : 40	 Training Loss : 0.0044300434809494095
+2022-02-23 10:32:27,574 Fold : 4	 Epoch : 40	 Validation Loss 0.11664590613844876	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:32:52,863 Fold : 4	 Epoch : 41	 Training Loss : 0.004492104311274099
+2022-02-23 10:32:53,734 Fold : 4	 Epoch : 41	 Validation Loss 0.11532219873669629	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:33:19,009 Fold : 4	 Epoch : 42	 Training Loss : 0.004445513903712188
+2022-02-23 10:33:19,872 Fold : 4	 Epoch : 42	 Validation Loss 0.11877340746398729	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:33:45,134 Fold : 4	 Epoch : 43	 Training Loss : 0.004365657335646185
+2022-02-23 10:33:45,972 Fold : 4	 Epoch : 43	 Validation Loss 0.11982215993786947	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:34:11,281 Fold : 4	 Epoch : 44	 Training Loss : 0.00432095865939378
+2022-02-23 10:34:12,140 Fold : 4	 Epoch : 44	 Validation Loss 0.11971866806897406	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:34:37,561 Fold : 4	 Epoch : 45	 Training Loss : 0.004294730915197371
+2022-02-23 10:34:38,412 Fold : 4	 Epoch : 45	 Validation Loss 0.1203036121576308	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:35:03,687 Fold : 4	 Epoch : 46	 Training Loss : 0.004178017329000535
+2022-02-23 10:35:04,537 Fold : 4	 Epoch : 46	 Validation Loss 0.12034238687752244	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:35:29,863 Fold : 4	 Epoch : 47	 Training Loss : 0.004164756285068246
+2022-02-23 10:35:30,733 Fold : 4	 Epoch : 47	 Validation Loss 0.11723541259729806	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 10:35:56,107 Fold : 4	 Epoch : 48	 Training Loss : 0.004163757512287702
+2022-02-23 10:35:56,960 Fold : 4	 Epoch : 48	 Validation Loss 0.11713247681752993	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:36:22,387 Fold : 4	 Epoch : 49	 Training Loss : 0.00406926373294222
+2022-02-23 10:36:23,253 Fold : 4	 Epoch : 49	 Validation Loss 0.11800513927860615	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:36:48,543 Fold : 4	 Epoch : 50	 Training Loss : 0.004404517141145854
+2022-02-23 10:36:49,397 Fold : 4	 Epoch : 50	 Validation Loss 0.11375522615316395	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:36:49,398 Fold 4 Finished. Saving best Accuracy 0.985
+2022-02-23 10:36:49,399 Starting Fold 6
+2022-02-23 10:37:14,873 Fold : 5	 Epoch : 1	 Training Loss : 0.3543360157470618
+2022-02-23 10:37:15,767 Fold : 5	 Epoch : 1	 Validation Loss 0.11494368887864627	 accuracy : 1.0	 TP : 200	 FP : 0	
+2022-02-23 10:37:17,756 Best Model saved with accuracy 1.0
+2022-02-23 10:37:43,040 Fold : 5	 Epoch : 2	 Training Loss : 0.10147428060216564
+2022-02-23 10:37:43,924 Fold : 5	 Epoch : 2	 Validation Loss 0.06997180787416604	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:38:09,351 Fold : 5	 Epoch : 3	 Training Loss : 0.08278347064541387
+2022-02-23 10:38:10,214 Fold : 5	 Epoch : 3	 Validation Loss 0.06727530635320224	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:38:35,453 Fold : 5	 Epoch : 4	 Training Loss : 0.07696535094042442
+2022-02-23 10:38:36,328 Fold : 5	 Epoch : 4	 Validation Loss 0.05005500351007168	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 10:39:01,583 Fold : 5	 Epoch : 5	 Training Loss : 0.054388387877094956
+2022-02-23 10:39:02,448 Fold : 5	 Epoch : 5	 Validation Loss 0.07397298701107502	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 10:39:27,677 Fold : 5	 Epoch : 6	 Training Loss : 0.04400098175808255
+2022-02-23 10:39:28,543 Fold : 5	 Epoch : 6	 Validation Loss 0.05661042063282086	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:39:53,710 Fold : 5	 Epoch : 7	 Training Loss : 0.03447106236957812
+2022-02-23 10:39:54,575 Fold : 5	 Epoch : 7	 Validation Loss 0.15643108922701615	 accuracy : 0.965	 TP : 193	 FP : 7	
+2022-02-23 10:40:19,701 Fold : 5	 Epoch : 8	 Training Loss : 0.034479412042336274
+2022-02-23 10:40:20,593 Fold : 5	 Epoch : 8	 Validation Loss 0.04614004428283526	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:40:45,858 Fold : 5	 Epoch : 9	 Training Loss : 0.020956690356667553
+2022-02-23 10:40:46,719 Fold : 5	 Epoch : 9	 Validation Loss 0.042577338978075065	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:41:11,996 Fold : 5	 Epoch : 10	 Training Loss : 0.019959254265164157
+2022-02-23 10:41:12,888 Fold : 5	 Epoch : 10	 Validation Loss 0.07763989355701667	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 10:41:38,140 Fold : 5	 Epoch : 11	 Training Loss : 0.014998596402749951
+2022-02-23 10:41:38,983 Fold : 5	 Epoch : 11	 Validation Loss 0.027988077893566627	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:42:04,166 Fold : 5	 Epoch : 12	 Training Loss : 0.01437922595193543
+2022-02-23 10:42:05,084 Fold : 5	 Epoch : 12	 Validation Loss 0.028095028506448634	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:42:30,330 Fold : 5	 Epoch : 13	 Training Loss : 0.012892915339242401
+2022-02-23 10:42:31,197 Fold : 5	 Epoch : 13	 Validation Loss 0.028344951641674224	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:42:56,513 Fold : 5	 Epoch : 14	 Training Loss : 0.012722481906946217
+2022-02-23 10:42:57,387 Fold : 5	 Epoch : 14	 Validation Loss 0.02521412196354224	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:43:22,552 Fold : 5	 Epoch : 15	 Training Loss : 0.011768039367910075
+2022-02-23 10:43:23,405 Fold : 5	 Epoch : 15	 Validation Loss 0.023357149983684603	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:43:48,642 Fold : 5	 Epoch : 16	 Training Loss : 0.014035417193164383
+2022-02-23 10:43:49,523 Fold : 5	 Epoch : 16	 Validation Loss 0.05882081761956215	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:44:14,826 Fold : 5	 Epoch : 17	 Training Loss : 0.010808832560931998
+2022-02-23 10:44:15,686 Fold : 5	 Epoch : 17	 Validation Loss 0.03189201481067217	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:44:40,920 Fold : 5	 Epoch : 18	 Training Loss : 0.012375067938202327
+2022-02-23 10:44:41,761 Fold : 5	 Epoch : 18	 Validation Loss 0.03216948451545949	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:45:07,069 Fold : 5	 Epoch : 19	 Training Loss : 0.010170507544119443
+2022-02-23 10:45:07,924 Fold : 5	 Epoch : 19	 Validation Loss 0.029954276996879622	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:45:33,187 Fold : 5	 Epoch : 20	 Training Loss : 0.009797199298710828
+2022-02-23 10:45:34,041 Fold : 5	 Epoch : 20	 Validation Loss 0.029750607119729884	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:45:59,347 Fold : 5	 Epoch : 21	 Training Loss : 0.01147815871601259
+2022-02-23 10:46:00,218 Fold : 5	 Epoch : 21	 Validation Loss 0.029634035765551604	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:46:25,465 Fold : 5	 Epoch : 22	 Training Loss : 0.010468742070120893
+2022-02-23 10:46:26,334 Fold : 5	 Epoch : 22	 Validation Loss 0.02939368291901281	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:46:51,614 Fold : 5	 Epoch : 23	 Training Loss : 0.009031588494378542
+2022-02-23 10:46:52,483 Fold : 5	 Epoch : 23	 Validation Loss 0.029618374573496673	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:47:17,820 Fold : 5	 Epoch : 24	 Training Loss : 0.008861711257070835
+2022-02-23 10:47:18,667 Fold : 5	 Epoch : 24	 Validation Loss 0.029490042065915007	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:47:43,902 Fold : 5	 Epoch : 25	 Training Loss : 0.008489174259011634
+2022-02-23 10:47:44,771 Fold : 5	 Epoch : 25	 Validation Loss 0.029556335200770542	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:48:09,947 Fold : 5	 Epoch : 26	 Training Loss : 0.008324100554870841
+2022-02-23 10:48:10,829 Fold : 5	 Epoch : 26	 Validation Loss 0.02962568296621052	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:48:36,127 Fold : 5	 Epoch : 27	 Training Loss : 0.009293764790137564
+2022-02-23 10:48:37,012 Fold : 5	 Epoch : 27	 Validation Loss 0.03454860745785901	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:49:02,388 Fold : 5	 Epoch : 28	 Training Loss : 0.01952807820842801
+2022-02-23 10:49:03,259 Fold : 5	 Epoch : 28	 Validation Loss 0.034762186266911715	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:49:28,522 Fold : 5	 Epoch : 29	 Training Loss : 0.0171912928074432
+2022-02-23 10:49:29,395 Fold : 5	 Epoch : 29	 Validation Loss 0.05093178360794599	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:49:54,702 Fold : 5	 Epoch : 30	 Training Loss : 0.008122845401106003
+2022-02-23 10:49:55,589 Fold : 5	 Epoch : 30	 Validation Loss 0.04933565319515765	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:50:20,870 Fold : 5	 Epoch : 31	 Training Loss : 0.007835878899121391
+2022-02-23 10:50:21,768 Fold : 5	 Epoch : 31	 Validation Loss 0.0549180859592385	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:50:47,145 Fold : 5	 Epoch : 32	 Training Loss : 0.007582919997470786
+2022-02-23 10:50:48,012 Fold : 5	 Epoch : 32	 Validation Loss 0.054501428573320694	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:51:13,422 Fold : 5	 Epoch : 33	 Training Loss : 0.007590883627666959
+2022-02-23 10:51:14,280 Fold : 5	 Epoch : 33	 Validation Loss 0.08567268958386894	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:51:39,557 Fold : 5	 Epoch : 34	 Training Loss : 0.007505506443391953
+2022-02-23 10:51:40,421 Fold : 5	 Epoch : 34	 Validation Loss 0.053167952985789343	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:52:05,724 Fold : 5	 Epoch : 35	 Training Loss : 0.007345716588523439
+2022-02-23 10:52:06,619 Fold : 5	 Epoch : 35	 Validation Loss 0.05355363047251908	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:52:31,826 Fold : 5	 Epoch : 36	 Training Loss : 0.008002577769470267
+2022-02-23 10:52:32,718 Fold : 5	 Epoch : 36	 Validation Loss 0.059667601447122603	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:52:58,014 Fold : 5	 Epoch : 37	 Training Loss : 0.007628703038790263
+2022-02-23 10:52:58,878 Fold : 5	 Epoch : 37	 Validation Loss 0.03474670279627809	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:53:24,206 Fold : 5	 Epoch : 38	 Training Loss : 0.007143674353885997
+2022-02-23 10:53:25,057 Fold : 5	 Epoch : 38	 Validation Loss 0.03480580616563272	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:53:50,343 Fold : 5	 Epoch : 39	 Training Loss : 0.007129927851825154
+2022-02-23 10:53:51,232 Fold : 5	 Epoch : 39	 Validation Loss 0.03484287057430125	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:54:16,593 Fold : 5	 Epoch : 40	 Training Loss : 0.007053019893646706
+2022-02-23 10:54:17,478 Fold : 5	 Epoch : 40	 Validation Loss 0.034847164347481266	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:54:42,798 Fold : 5	 Epoch : 41	 Training Loss : 0.006914765142677685
+2022-02-23 10:54:43,665 Fold : 5	 Epoch : 41	 Validation Loss 0.03483792718571539	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:55:08,895 Fold : 5	 Epoch : 42	 Training Loss : 0.006865552942534643
+2022-02-23 10:55:09,759 Fold : 5	 Epoch : 42	 Validation Loss 0.03499323500391956	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:55:35,064 Fold : 5	 Epoch : 43	 Training Loss : 0.00939575210941257
+2022-02-23 10:55:35,918 Fold : 5	 Epoch : 43	 Validation Loss 0.02645507925010931	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:56:01,201 Fold : 5	 Epoch : 44	 Training Loss : 0.006576126674190164
+2022-02-23 10:56:02,046 Fold : 5	 Epoch : 44	 Validation Loss 0.027214920273623787	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:56:27,266 Fold : 5	 Epoch : 45	 Training Loss : 0.007000609630527573
+2022-02-23 10:56:28,142 Fold : 5	 Epoch : 45	 Validation Loss 0.0664227454779813	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:56:53,448 Fold : 5	 Epoch : 46	 Training Loss : 0.006672363446601334
+2022-02-23 10:56:54,334 Fold : 5	 Epoch : 46	 Validation Loss 0.03516798820167493	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:57:19,641 Fold : 5	 Epoch : 47	 Training Loss : 0.00856475955411692
+2022-02-23 10:57:20,504 Fold : 5	 Epoch : 47	 Validation Loss 0.0686624088915638	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 10:57:45,716 Fold : 5	 Epoch : 48	 Training Loss : 0.008112950036385362
+2022-02-23 10:57:46,566 Fold : 5	 Epoch : 48	 Validation Loss 0.03214894871836385	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:58:11,861 Fold : 5	 Epoch : 49	 Training Loss : 0.00670932097585007
+2022-02-23 10:58:12,734 Fold : 5	 Epoch : 49	 Validation Loss 0.03244216544016336	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:58:37,980 Fold : 5	 Epoch : 50	 Training Loss : 0.0068191469118963665
+2022-02-23 10:58:38,850 Fold : 5	 Epoch : 50	 Validation Loss 0.03225547258849614	 accuracy : 0.995	 TP : 199	 FP : 1	
+2022-02-23 10:58:38,850 Fold 5 Finished. Saving best Accuracy 1.0
+2022-02-23 10:58:38,851 Starting Fold 7
+2022-02-23 10:59:04,425 Fold : 6	 Epoch : 1	 Training Loss : 0.4004615682310292
+2022-02-23 10:59:05,270 Fold : 6	 Epoch : 1	 Validation Loss 0.2074730029472938	 accuracy : 0.96	 TP : 192	 FP : 8	
+2022-02-23 10:59:07,248 Best Model saved with accuracy 0.96
+2022-02-23 10:59:32,590 Fold : 6	 Epoch : 2	 Training Loss : 0.1279361216417913
+2022-02-23 10:59:33,431 Fold : 6	 Epoch : 2	 Validation Loss 0.14118028260194337	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 10:59:47,529 Best Model saved with accuracy 0.97
+2022-02-23 11:00:12,729 Fold : 6	 Epoch : 3	 Training Loss : 0.09318496576244277
+2022-02-23 11:00:13,580 Fold : 6	 Epoch : 3	 Validation Loss 0.1070684243280154	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 11:00:38,650 Fold : 6	 Epoch : 4	 Training Loss : 0.06626640980331493
+2022-02-23 11:00:39,512 Fold : 6	 Epoch : 4	 Validation Loss 0.09044194250152661	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 11:01:04,682 Fold : 6	 Epoch : 5	 Training Loss : 0.04840353322547993
+2022-02-23 11:01:05,549 Fold : 6	 Epoch : 5	 Validation Loss 0.09196799936202857	 accuracy : 0.97	 TP : 194	 FP : 6	
+2022-02-23 11:01:30,734 Fold : 6	 Epoch : 6	 Training Loss : 0.039064998064921905
+2022-02-23 11:01:31,584 Fold : 6	 Epoch : 6	 Validation Loss 0.09947522235317872	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 11:01:46,421 Best Model saved with accuracy 0.98
+2022-02-23 11:02:11,703 Fold : 6	 Epoch : 7	 Training Loss : 0.02691743479642485
+2022-02-23 11:02:12,581 Fold : 6	 Epoch : 7	 Validation Loss 0.08378586810655318	 accuracy : 0.975	 TP : 195	 FP : 5	
+2022-02-23 11:02:37,738 Fold : 6	 Epoch : 8	 Training Loss : 0.024323077065803642
+2022-02-23 11:02:38,561 Fold : 6	 Epoch : 8	 Validation Loss 0.08085250195402366	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 11:03:03,767 Fold : 6	 Epoch : 9	 Training Loss : 0.03592110777805958
+2022-02-23 11:03:04,604 Fold : 6	 Epoch : 9	 Validation Loss 0.0663445510256749	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:03:19,689 Best Model saved with accuracy 0.985
+2022-02-23 11:03:44,843 Fold : 6	 Epoch : 10	 Training Loss : 0.03490227452545826
+2022-02-23 11:03:45,671 Fold : 6	 Epoch : 10	 Validation Loss 0.06817363224063928	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:04:01,661 Best Model saved with accuracy 0.99
+2022-02-23 11:04:26,727 Fold : 6	 Epoch : 11	 Training Loss : 0.024147584643547555
+2022-02-23 11:04:27,572 Fold : 6	 Epoch : 11	 Validation Loss 0.06368439354432318	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:04:52,572 Fold : 6	 Epoch : 12	 Training Loss : 0.018278181769086847
+2022-02-23 11:04:53,418 Fold : 6	 Epoch : 12	 Validation Loss 0.0620396131506333	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:05:18,463 Fold : 6	 Epoch : 13	 Training Loss : 0.01726308501175871
+2022-02-23 11:05:19,292 Fold : 6	 Epoch : 13	 Validation Loss 0.06295918336567971	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:05:44,485 Fold : 6	 Epoch : 14	 Training Loss : 0.027899412999561588
+2022-02-23 11:05:45,312 Fold : 6	 Epoch : 14	 Validation Loss 0.0716438629807761	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:06:10,426 Fold : 6	 Epoch : 15	 Training Loss : 0.04364763552439399
+2022-02-23 11:06:11,291 Fold : 6	 Epoch : 15	 Validation Loss 0.07379595505503508	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:06:36,340 Fold : 6	 Epoch : 16	 Training Loss : 0.03817505295488185
+2022-02-23 11:06:37,209 Fold : 6	 Epoch : 16	 Validation Loss 0.07717413082718849	 accuracy : 0.98	 TP : 196	 FP : 4	
+2022-02-23 11:07:02,297 Fold : 6	 Epoch : 17	 Training Loss : 0.023483427016929324
+2022-02-23 11:07:03,108 Fold : 6	 Epoch : 17	 Validation Loss 0.0702922589575442	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:07:28,223 Fold : 6	 Epoch : 18	 Training Loss : 0.023761675310587243
+2022-02-23 11:07:29,064 Fold : 6	 Epoch : 18	 Validation Loss 0.11503937733001433	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:07:54,145 Fold : 6	 Epoch : 19	 Training Loss : 0.014893984253701222
+2022-02-23 11:07:54,990 Fold : 6	 Epoch : 19	 Validation Loss 0.08399274046174608	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:08:20,126 Fold : 6	 Epoch : 20	 Training Loss : 0.013211825843817289
+2022-02-23 11:08:20,987 Fold : 6	 Epoch : 20	 Validation Loss 0.059157593677250236	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:08:46,164 Fold : 6	 Epoch : 21	 Training Loss : 0.013018934212076212
+2022-02-23 11:08:47,001 Fold : 6	 Epoch : 21	 Validation Loss 0.05940898514997501	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:09:12,127 Fold : 6	 Epoch : 22	 Training Loss : 0.014387623032754553
+2022-02-23 11:09:12,979 Fold : 6	 Epoch : 22	 Validation Loss 0.059984288787325986	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:09:38,165 Fold : 6	 Epoch : 23	 Training Loss : 0.01142464488553482
+2022-02-23 11:09:39,002 Fold : 6	 Epoch : 23	 Validation Loss 0.08724387722591367	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:10:04,181 Fold : 6	 Epoch : 24	 Training Loss : 0.010287919385258906
+2022-02-23 11:10:05,042 Fold : 6	 Epoch : 24	 Validation Loss 0.0618324398349684	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:10:30,304 Fold : 6	 Epoch : 25	 Training Loss : 0.009354045388006074
+2022-02-23 11:10:31,171 Fold : 6	 Epoch : 25	 Validation Loss 0.0988237711135298	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:10:56,403 Fold : 6	 Epoch : 26	 Training Loss : 0.009685265667420546
+2022-02-23 11:10:57,260 Fold : 6	 Epoch : 26	 Validation Loss 0.09316354715981735	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:11:22,592 Fold : 6	 Epoch : 27	 Training Loss : 0.008344495558828515
+2022-02-23 11:11:23,438 Fold : 6	 Epoch : 27	 Validation Loss 0.07572578594016914	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:11:48,673 Fold : 6	 Epoch : 28	 Training Loss : 0.008170213452623492
+2022-02-23 11:11:49,521 Fold : 6	 Epoch : 28	 Validation Loss 0.08518132467109424	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:12:14,681 Fold : 6	 Epoch : 29	 Training Loss : 0.007663230667406294
+2022-02-23 11:12:15,532 Fold : 6	 Epoch : 29	 Validation Loss 0.08620785429285696	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:12:40,826 Fold : 6	 Epoch : 30	 Training Loss : 0.007589507317918885
+2022-02-23 11:12:41,698 Fold : 6	 Epoch : 30	 Validation Loss 0.08682082138525751	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:13:06,890 Fold : 6	 Epoch : 31	 Training Loss : 0.007523689171648584
+2022-02-23 11:13:07,764 Fold : 6	 Epoch : 31	 Validation Loss 0.08856359634620066	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:13:33,056 Fold : 6	 Epoch : 32	 Training Loss : 0.007105244924397474
+2022-02-23 11:13:33,896 Fold : 6	 Epoch : 32	 Validation Loss 0.08948928379238798	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:13:59,166 Fold : 6	 Epoch : 33	 Training Loss : 0.007117269537827399
+2022-02-23 11:14:00,015 Fold : 6	 Epoch : 33	 Validation Loss 0.089588037906931	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:14:25,236 Fold : 6	 Epoch : 34	 Training Loss : 0.007007581639170114
+2022-02-23 11:14:26,100 Fold : 6	 Epoch : 34	 Validation Loss 0.09033715434802267	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:14:51,382 Fold : 6	 Epoch : 35	 Training Loss : 0.0069261578651743805
+2022-02-23 11:14:52,225 Fold : 6	 Epoch : 35	 Validation Loss 0.08981742921213691	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:15:17,545 Fold : 6	 Epoch : 36	 Training Loss : 0.0067596410933349815
+2022-02-23 11:15:18,394 Fold : 6	 Epoch : 36	 Validation Loss 0.06209924774101147	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:15:43,629 Fold : 6	 Epoch : 37	 Training Loss : 0.006619381504216497
+2022-02-23 11:15:44,469 Fold : 6	 Epoch : 37	 Validation Loss 0.062256853230512485	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:16:09,759 Fold : 6	 Epoch : 38	 Training Loss : 0.006597053340686086
+2022-02-23 11:16:10,616 Fold : 6	 Epoch : 38	 Validation Loss 0.06329759470043847	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:16:35,977 Fold : 6	 Epoch : 39	 Training Loss : 0.0065156885445633505
+2022-02-23 11:16:36,833 Fold : 6	 Epoch : 39	 Validation Loss 0.06548720026890245	 accuracy : 0.99	 TP : 198	 FP : 2	
+2022-02-23 11:17:02,248 Fold : 6	 Epoch : 40	 Training Loss : 0.006391076916770544
+2022-02-23 11:17:03,122 Fold : 6	 Epoch : 40	 Validation Loss 0.06621946811747666	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:17:28,457 Fold : 6	 Epoch : 41	 Training Loss : 0.006299807384493761
+2022-02-23 11:17:29,297 Fold : 6	 Epoch : 41	 Validation Loss 0.06677933802935652	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:17:54,527 Fold : 6	 Epoch : 42	 Training Loss : 0.0062128770659910515
+2022-02-23 11:17:55,386 Fold : 6	 Epoch : 42	 Validation Loss 0.06696392875164747	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:18:20,560 Fold : 6	 Epoch : 43	 Training Loss : 0.006119056367814275
+2022-02-23 11:18:21,392 Fold : 6	 Epoch : 43	 Validation Loss 0.07223276695451485	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:18:46,683 Fold : 6	 Epoch : 44	 Training Loss : 0.00620195650117239
+2022-02-23 11:18:47,545 Fold : 6	 Epoch : 44	 Validation Loss 0.0723633788472328	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:19:12,896 Fold : 6	 Epoch : 45	 Training Loss : 0.006104522870113475
+2022-02-23 11:19:13,733 Fold : 6	 Epoch : 45	 Validation Loss 0.10177770376993486	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:19:39,122 Fold : 6	 Epoch : 46	 Training Loss : 0.006028007786621207
+2022-02-23 11:19:39,980 Fold : 6	 Epoch : 46	 Validation Loss 0.07483599600023948	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:20:05,247 Fold : 6	 Epoch : 47	 Training Loss : 0.005982462122379469
+2022-02-23 11:20:06,095 Fold : 6	 Epoch : 47	 Validation Loss 0.07711593673313753	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:20:31,524 Fold : 6	 Epoch : 48	 Training Loss : 0.005895361687830051
+2022-02-23 11:20:32,378 Fold : 6	 Epoch : 48	 Validation Loss 0.0783973726300666	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:20:57,640 Fold : 6	 Epoch : 49	 Training Loss : 0.005893219387092229
+2022-02-23 11:20:58,499 Fold : 6	 Epoch : 49	 Validation Loss 0.07901702446934696	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:21:23,740 Fold : 6	 Epoch : 50	 Training Loss : 0.005819418493566835
+2022-02-23 11:21:24,584 Fold : 6	 Epoch : 50	 Validation Loss 0.08149410965136038	 accuracy : 0.985	 TP : 197	 FP : 3	
+2022-02-23 11:21:24,584 Fold 6 Finished. Saving best Accuracy 0.99
+2022-02-23 11:21:24,585 Starting Fold 8
+2022-02-23 11:21:50,260 Fold : 7	 Epoch : 1	 Training Loss : 0.3918857436760196
+2022-02-23 11:21:51,070 Fold : 7	 Epoch : 1	 Validation Loss 0.16095570761423844	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 11:21:53,080 Best Model saved with accuracy 1.0
+2022-02-23 11:22:18,495 Fold : 7	 Epoch : 2	 Training Loss : 0.11845165058704359
+2022-02-23 11:22:19,311 Fold : 7	 Epoch : 2	 Validation Loss 0.10476167671955548	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:22:44,845 Fold : 7	 Epoch : 3	 Training Loss : 0.08077033855287093
+2022-02-23 11:22:45,649 Fold : 7	 Epoch : 3	 Validation Loss 0.06774802964467269	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:23:11,023 Fold : 7	 Epoch : 4	 Training Loss : 0.05893536675388792
+2022-02-23 11:23:11,820 Fold : 7	 Epoch : 4	 Validation Loss 0.06383719811072716	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:23:37,142 Fold : 7	 Epoch : 5	 Training Loss : 0.07383548621354359
+2022-02-23 11:23:37,971 Fold : 7	 Epoch : 5	 Validation Loss 0.10508414945350243	 accuracy : 0.9798994974874372	 TP : 195	 FP : 4	
+2022-02-23 11:24:03,311 Fold : 7	 Epoch : 6	 Training Loss : 0.05982436707043754
+2022-02-23 11:24:04,116 Fold : 7	 Epoch : 6	 Validation Loss 0.05896918776516731	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:24:29,488 Fold : 7	 Epoch : 7	 Training Loss : 0.05435862936844517
+2022-02-23 11:24:30,278 Fold : 7	 Epoch : 7	 Validation Loss 0.049272843421651766	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:24:55,706 Fold : 7	 Epoch : 8	 Training Loss : 0.0279441929555365
+2022-02-23 11:24:56,531 Fold : 7	 Epoch : 8	 Validation Loss 0.04408855850879963	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:25:21,984 Fold : 7	 Epoch : 9	 Training Loss : 0.024749532275434052
+2022-02-23 11:25:22,798 Fold : 7	 Epoch : 9	 Validation Loss 0.04220863424528103	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:25:48,255 Fold : 7	 Epoch : 10	 Training Loss : 0.02241308260376432
+2022-02-23 11:25:49,085 Fold : 7	 Epoch : 10	 Validation Loss 0.06985336205420586	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:26:14,491 Fold : 7	 Epoch : 11	 Training Loss : 0.03494471449604524
+2022-02-23 11:26:15,284 Fold : 7	 Epoch : 11	 Validation Loss 0.056845795936309375	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:26:40,710 Fold : 7	 Epoch : 12	 Training Loss : 0.02981543171335943
+2022-02-23 11:26:41,518 Fold : 7	 Epoch : 12	 Validation Loss 0.04210785833688883	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:27:06,901 Fold : 7	 Epoch : 13	 Training Loss : 0.018458438055988933
+2022-02-23 11:27:07,703 Fold : 7	 Epoch : 13	 Validation Loss 0.04430865492815009	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:27:33,030 Fold : 7	 Epoch : 14	 Training Loss : 0.022200570366944054
+2022-02-23 11:27:33,829 Fold : 7	 Epoch : 14	 Validation Loss 0.04007130331144883	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:27:59,205 Fold : 7	 Epoch : 15	 Training Loss : 0.015650653920602053
+2022-02-23 11:28:00,034 Fold : 7	 Epoch : 15	 Validation Loss 0.03895841155631038	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:28:25,489 Fold : 7	 Epoch : 16	 Training Loss : 0.05628855559708817
+2022-02-23 11:28:26,305 Fold : 7	 Epoch : 16	 Validation Loss 0.06098419757416615	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:28:51,826 Fold : 7	 Epoch : 17	 Training Loss : 0.03504574582413105
+2022-02-23 11:28:52,626 Fold : 7	 Epoch : 17	 Validation Loss 0.0408855271525681	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:29:18,078 Fold : 7	 Epoch : 18	 Training Loss : 0.01764649190590717
+2022-02-23 11:29:18,896 Fold : 7	 Epoch : 18	 Validation Loss 0.040027152496175125	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:29:44,419 Fold : 7	 Epoch : 19	 Training Loss : 0.016718339806954776
+2022-02-23 11:29:45,232 Fold : 7	 Epoch : 19	 Validation Loss 0.03908545108368763	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:30:10,615 Fold : 7	 Epoch : 20	 Training Loss : 0.017667287170687423
+2022-02-23 11:30:11,436 Fold : 7	 Epoch : 20	 Validation Loss 0.051577532986322276	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:30:36,940 Fold : 7	 Epoch : 21	 Training Loss : 0.018183431413490325
+2022-02-23 11:30:37,746 Fold : 7	 Epoch : 21	 Validation Loss 0.04644350976181718	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:31:03,107 Fold : 7	 Epoch : 22	 Training Loss : 0.016328527484022613
+2022-02-23 11:31:03,914 Fold : 7	 Epoch : 22	 Validation Loss 0.03677255277020427	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:31:29,395 Fold : 7	 Epoch : 23	 Training Loss : 0.012534774505184032
+2022-02-23 11:31:30,224 Fold : 7	 Epoch : 23	 Validation Loss 0.03708351765257808	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:31:55,750 Fold : 7	 Epoch : 24	 Training Loss : 0.012109885647078045
+2022-02-23 11:31:56,572 Fold : 7	 Epoch : 24	 Validation Loss 0.03727786636982973	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:32:21,957 Fold : 7	 Epoch : 25	 Training Loss : 0.015315038682144535
+2022-02-23 11:32:22,766 Fold : 7	 Epoch : 25	 Validation Loss 0.04040856412253701	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:32:48,215 Fold : 7	 Epoch : 26	 Training Loss : 0.012810429743175129
+2022-02-23 11:32:49,046 Fold : 7	 Epoch : 26	 Validation Loss 0.03944305126340343	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:33:14,558 Fold : 7	 Epoch : 27	 Training Loss : 0.014869759884147373
+2022-02-23 11:33:15,384 Fold : 7	 Epoch : 27	 Validation Loss 0.038325531963402264	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:33:40,866 Fold : 7	 Epoch : 28	 Training Loss : 0.01159533034868738
+2022-02-23 11:33:41,673 Fold : 7	 Epoch : 28	 Validation Loss 0.03863298445223616	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:34:07,083 Fold : 7	 Epoch : 29	 Training Loss : 0.011814157746682343
+2022-02-23 11:34:07,924 Fold : 7	 Epoch : 29	 Validation Loss 0.038070468070845194	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:34:33,370 Fold : 7	 Epoch : 30	 Training Loss : 0.011334469234238245
+2022-02-23 11:34:34,185 Fold : 7	 Epoch : 30	 Validation Loss 0.04037572728255047	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:34:59,644 Fold : 7	 Epoch : 31	 Training Loss : 0.010387113843795046
+2022-02-23 11:35:00,471 Fold : 7	 Epoch : 31	 Validation Loss 0.045299071442479126	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:35:25,999 Fold : 7	 Epoch : 32	 Training Loss : 0.007850128022255376
+2022-02-23 11:35:26,810 Fold : 7	 Epoch : 32	 Validation Loss 0.03956546491155258	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:35:52,337 Fold : 7	 Epoch : 33	 Training Loss : 0.00781414664483496
+2022-02-23 11:35:53,144 Fold : 7	 Epoch : 33	 Validation Loss 0.0391041029137201	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:36:18,632 Fold : 7	 Epoch : 34	 Training Loss : 0.007529657280039308
+2022-02-23 11:36:19,450 Fold : 7	 Epoch : 34	 Validation Loss 0.039074636691321545	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:36:44,876 Fold : 7	 Epoch : 35	 Training Loss : 0.007528377646979477
+2022-02-23 11:36:45,700 Fold : 7	 Epoch : 35	 Validation Loss 0.040552753095443435	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:37:11,108 Fold : 7	 Epoch : 36	 Training Loss : 0.007215993755380623
+2022-02-23 11:37:11,945 Fold : 7	 Epoch : 36	 Validation Loss 0.040376710723369166	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:37:37,504 Fold : 7	 Epoch : 37	 Training Loss : 0.007241876781336032
+2022-02-23 11:37:38,316 Fold : 7	 Epoch : 37	 Validation Loss 0.039553846787804596	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:38:03,802 Fold : 7	 Epoch : 38	 Training Loss : 0.007124736352125183
+2022-02-23 11:38:04,623 Fold : 7	 Epoch : 38	 Validation Loss 0.03799466126096936	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:38:30,150 Fold : 7	 Epoch : 39	 Training Loss : 0.014525192378122094
+2022-02-23 11:38:30,957 Fold : 7	 Epoch : 39	 Validation Loss 0.04154341198647252	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:38:56,362 Fold : 7	 Epoch : 40	 Training Loss : 0.007210325521425277
+2022-02-23 11:38:57,174 Fold : 7	 Epoch : 40	 Validation Loss 0.03962709677692216	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:39:22,695 Fold : 7	 Epoch : 41	 Training Loss : 0.00680525214348953
+2022-02-23 11:39:23,528 Fold : 7	 Epoch : 41	 Validation Loss 0.03930416728298251	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:39:48,969 Fold : 7	 Epoch : 42	 Training Loss : 0.006917013901069627
+2022-02-23 11:39:49,783 Fold : 7	 Epoch : 42	 Validation Loss 0.039782839021287285	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:40:15,257 Fold : 7	 Epoch : 43	 Training Loss : 0.006590607923239337
+2022-02-23 11:40:16,065 Fold : 7	 Epoch : 43	 Validation Loss 0.03938184366919673	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:40:41,632 Fold : 7	 Epoch : 44	 Training Loss : 0.006699983209338305
+2022-02-23 11:40:42,468 Fold : 7	 Epoch : 44	 Validation Loss 0.039265852009591	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:41:07,924 Fold : 7	 Epoch : 45	 Training Loss : 0.009748525026744963
+2022-02-23 11:41:08,766 Fold : 7	 Epoch : 45	 Validation Loss 0.03963065124116838	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:41:34,411 Fold : 7	 Epoch : 46	 Training Loss : 0.006422073453515103
+2022-02-23 11:41:35,253 Fold : 7	 Epoch : 46	 Validation Loss 0.040041948489558235	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 11:42:00,898 Fold : 7	 Epoch : 47	 Training Loss : 0.0064602300834459515
+2022-02-23 11:42:01,742 Fold : 7	 Epoch : 47	 Validation Loss 0.03960092808119953	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:42:27,338 Fold : 7	 Epoch : 48	 Training Loss : 0.006374018457011387
+2022-02-23 11:42:28,149 Fold : 7	 Epoch : 48	 Validation Loss 0.038598532251154	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:42:53,798 Fold : 7	 Epoch : 49	 Training Loss : 0.006297604809723063
+2022-02-23 11:42:54,628 Fold : 7	 Epoch : 49	 Validation Loss 0.03839535894803703	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:43:20,171 Fold : 7	 Epoch : 50	 Training Loss : 0.006332852686422744
+2022-02-23 11:43:21,013 Fold : 7	 Epoch : 50	 Validation Loss 0.03851487098906476	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 11:43:21,013 Fold 7 Finished. Saving best Accuracy 1.0
+2022-02-23 11:43:21,014 Starting Fold 9
+2022-02-23 11:43:46,663 Fold : 8	 Epoch : 1	 Training Loss : 0.35754895117133856
+2022-02-23 11:43:47,606 Fold : 8	 Epoch : 1	 Validation Loss 0.15812181050960833	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:43:49,650 Best Model saved with accuracy 0.9748743718592965
+2022-02-23 11:44:14,924 Fold : 8	 Epoch : 2	 Training Loss : 0.10348950366356544
+2022-02-23 11:44:15,867 Fold : 8	 Epoch : 2	 Validation Loss 0.09410061687231064	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:44:29,225 Best Model saved with accuracy 0.9849246231155779
+2022-02-23 11:44:54,485 Fold : 8	 Epoch : 3	 Training Loss : 0.05931129782194538
+2022-02-23 11:44:55,413 Fold : 8	 Epoch : 3	 Validation Loss 0.07736863797673812	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:45:20,512 Fold : 8	 Epoch : 4	 Training Loss : 0.047611009229772856
+2022-02-23 11:45:21,424 Fold : 8	 Epoch : 4	 Validation Loss 0.07477316016761157	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:45:46,398 Fold : 8	 Epoch : 5	 Training Loss : 0.05778791710534798
+2022-02-23 11:45:47,303 Fold : 8	 Epoch : 5	 Validation Loss 0.09947222270644628	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:46:12,330 Fold : 8	 Epoch : 6	 Training Loss : 0.04858690566782441
+2022-02-23 11:46:13,213 Fold : 8	 Epoch : 6	 Validation Loss 0.09071945098157112	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:46:38,243 Fold : 8	 Epoch : 7	 Training Loss : 0.024120852134988775
+2022-02-23 11:46:39,128 Fold : 8	 Epoch : 7	 Validation Loss 0.12268300963422427	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:47:04,088 Fold : 8	 Epoch : 8	 Training Loss : 0.018624575201621547
+2022-02-23 11:47:04,988 Fold : 8	 Epoch : 8	 Validation Loss 0.071749079041183	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 11:47:30,064 Fold : 8	 Epoch : 9	 Training Loss : 0.01908474011413221
+2022-02-23 11:47:30,924 Fold : 8	 Epoch : 9	 Validation Loss 0.10902410093694925	 accuracy : 0.9798994974874372	 TP : 195	 FP : 4	
+2022-02-23 11:47:56,032 Fold : 8	 Epoch : 10	 Training Loss : 0.015839077149783925
+2022-02-23 11:47:56,955 Fold : 8	 Epoch : 10	 Validation Loss 0.12671970217846906	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 11:48:22,014 Fold : 8	 Epoch : 11	 Training Loss : 0.03722431805882869
+2022-02-23 11:48:22,914 Fold : 8	 Epoch : 11	 Validation Loss 0.1326084709368073	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:48:47,954 Fold : 8	 Epoch : 12	 Training Loss : 0.02061342791837108
+2022-02-23 11:48:48,888 Fold : 8	 Epoch : 12	 Validation Loss 0.1450806028711108	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:49:14,014 Fold : 8	 Epoch : 13	 Training Loss : 0.01657371943500558
+2022-02-23 11:49:14,935 Fold : 8	 Epoch : 13	 Validation Loss 0.1646779184946074	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:49:39,917 Fold : 8	 Epoch : 14	 Training Loss : 0.015450182300160773
+2022-02-23 11:49:40,831 Fold : 8	 Epoch : 14	 Validation Loss 0.11890784873125645	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:50:05,819 Fold : 8	 Epoch : 15	 Training Loss : 0.010361658342714821
+2022-02-23 11:50:06,749 Fold : 8	 Epoch : 15	 Validation Loss 0.11882753630813497	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:50:31,866 Fold : 8	 Epoch : 16	 Training Loss : 0.009654894874464455
+2022-02-23 11:50:32,813 Fold : 8	 Epoch : 16	 Validation Loss 0.12220805578936751	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:50:57,895 Fold : 8	 Epoch : 17	 Training Loss : 0.009343461289453054
+2022-02-23 11:50:58,832 Fold : 8	 Epoch : 17	 Validation Loss 0.12145044325062862	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:51:23,868 Fold : 8	 Epoch : 18	 Training Loss : 0.008782431165205449
+2022-02-23 11:51:24,825 Fold : 8	 Epoch : 18	 Validation Loss 0.12313108379021287	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:51:49,926 Fold : 8	 Epoch : 19	 Training Loss : 0.008449126047448121
+2022-02-23 11:51:50,816 Fold : 8	 Epoch : 19	 Validation Loss 0.1247276733808506	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:52:16,000 Fold : 8	 Epoch : 20	 Training Loss : 0.0077259630197659135
+2022-02-23 11:52:16,918 Fold : 8	 Epoch : 20	 Validation Loss 0.12912724045320198	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:52:42,033 Fold : 8	 Epoch : 21	 Training Loss : 0.00785901966862314
+2022-02-23 11:52:42,941 Fold : 8	 Epoch : 21	 Validation Loss 0.12806081420813614	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:53:08,138 Fold : 8	 Epoch : 22	 Training Loss : 0.007573639374251278
+2022-02-23 11:53:09,041 Fold : 8	 Epoch : 22	 Validation Loss 0.13071617340812317	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:53:34,184 Fold : 8	 Epoch : 23	 Training Loss : 0.00739349135775618
+2022-02-23 11:53:35,099 Fold : 8	 Epoch : 23	 Validation Loss 0.17051016804403984	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:54:00,326 Fold : 8	 Epoch : 24	 Training Loss : 0.0070625622153914136
+2022-02-23 11:54:01,244 Fold : 8	 Epoch : 24	 Validation Loss 0.1306952426317506	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:54:26,299 Fold : 8	 Epoch : 25	 Training Loss : 0.006864051349111833
+2022-02-23 11:54:27,203 Fold : 8	 Epoch : 25	 Validation Loss 0.1694290906083412	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:54:52,389 Fold : 8	 Epoch : 26	 Training Loss : 0.0067877512774430215
+2022-02-23 11:54:53,298 Fold : 8	 Epoch : 26	 Validation Loss 0.12991783760774595	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:55:18,514 Fold : 8	 Epoch : 27	 Training Loss : 0.007424406875673283
+2022-02-23 11:55:19,420 Fold : 8	 Epoch : 27	 Validation Loss 0.13697864770746002	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 11:55:44,538 Fold : 8	 Epoch : 28	 Training Loss : 0.047875814179341045
+2022-02-23 11:55:45,443 Fold : 8	 Epoch : 28	 Validation Loss 0.1639233552492582	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:56:10,592 Fold : 8	 Epoch : 29	 Training Loss : 0.012403414505700181
+2022-02-23 11:56:11,512 Fold : 8	 Epoch : 29	 Validation Loss 0.1765568987108194	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 11:56:36,734 Fold : 8	 Epoch : 30	 Training Loss : 0.024356673014283712
+2022-02-23 11:56:37,640 Fold : 8	 Epoch : 30	 Validation Loss 0.1162526690436957	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 11:57:02,789 Fold : 8	 Epoch : 31	 Training Loss : 0.009329222316279941
+2022-02-23 11:57:03,708 Fold : 8	 Epoch : 31	 Validation Loss 0.12371384223493245	 accuracy : 0.9597989949748744	 TP : 191	 FP : 8	
+2022-02-23 11:57:28,933 Fold : 8	 Epoch : 32	 Training Loss : 0.00648652295681781
+2022-02-23 11:57:29,839 Fold : 8	 Epoch : 32	 Validation Loss 0.1242076226313097	 accuracy : 0.9597989949748744	 TP : 191	 FP : 8	
+2022-02-23 11:57:55,017 Fold : 8	 Epoch : 33	 Training Loss : 0.006604968402825762
+2022-02-23 11:57:55,945 Fold : 8	 Epoch : 33	 Validation Loss 0.13941517176751334	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 11:58:21,097 Fold : 8	 Epoch : 34	 Training Loss : 0.006745284073986113
+2022-02-23 11:58:21,997 Fold : 8	 Epoch : 34	 Validation Loss 0.14833641985359675	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 11:58:47,265 Fold : 8	 Epoch : 35	 Training Loss : 0.008572036300652794
+2022-02-23 11:58:48,195 Fold : 8	 Epoch : 35	 Validation Loss 0.12018137298022899	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:59:13,361 Fold : 8	 Epoch : 36	 Training Loss : 0.006116515659544218
+2022-02-23 11:59:14,276 Fold : 8	 Epoch : 36	 Validation Loss 0.10599253586350152	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 11:59:39,464 Fold : 8	 Epoch : 37	 Training Loss : 0.005989045810045874
+2022-02-23 11:59:40,361 Fold : 8	 Epoch : 37	 Validation Loss 0.1333614114779406	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 12:00:05,543 Fold : 8	 Epoch : 38	 Training Loss : 0.008319239444972482
+2022-02-23 12:00:06,472 Fold : 8	 Epoch : 38	 Validation Loss 0.1428229631856084	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 12:00:31,660 Fold : 8	 Epoch : 39	 Training Loss : 0.006428652520948422
+2022-02-23 12:00:32,593 Fold : 8	 Epoch : 39	 Validation Loss 0.1301304507517041	 accuracy : 0.9748743718592965	 TP : 194	 FP : 5	
+2022-02-23 12:00:57,789 Fold : 8	 Epoch : 40	 Training Loss : 0.005655036056331093
+2022-02-23 12:00:58,705 Fold : 8	 Epoch : 40	 Validation Loss 0.1357278723287611	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 12:01:23,787 Fold : 8	 Epoch : 41	 Training Loss : 0.005639275848807301
+2022-02-23 12:01:24,718 Fold : 8	 Epoch : 41	 Validation Loss 0.1366145638301252	 accuracy : 0.964824120603015	 TP : 192	 FP : 7	
+2022-02-23 12:01:49,984 Fold : 8	 Epoch : 42	 Training Loss : 0.0055982897299275336
+2022-02-23 12:01:50,881 Fold : 8	 Epoch : 42	 Validation Loss 0.1360749422142712	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:02:16,059 Fold : 8	 Epoch : 43	 Training Loss : 0.005560920047823207
+2022-02-23 12:02:16,961 Fold : 8	 Epoch : 43	 Validation Loss 0.1361962035835649	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:02:42,134 Fold : 8	 Epoch : 44	 Training Loss : 0.005489620761571652
+2022-02-23 12:02:43,045 Fold : 8	 Epoch : 44	 Validation Loss 0.1364665559779566	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:03:08,259 Fold : 8	 Epoch : 45	 Training Loss : 0.005420739320730458
+2022-02-23 12:03:09,132 Fold : 8	 Epoch : 45	 Validation Loss 0.13730670453514904	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:03:34,303 Fold : 8	 Epoch : 46	 Training Loss : 0.004978447804335572
+2022-02-23 12:03:35,230 Fold : 8	 Epoch : 46	 Validation Loss 0.13822284940845117	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:04:00,478 Fold : 8	 Epoch : 47	 Training Loss : 0.006819912190881691
+2022-02-23 12:04:01,409 Fold : 8	 Epoch : 47	 Validation Loss 0.1462762118764938	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:04:26,547 Fold : 8	 Epoch : 48	 Training Loss : 0.005339195066231436
+2022-02-23 12:04:27,488 Fold : 8	 Epoch : 48	 Validation Loss 0.18878105392930314	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:04:52,709 Fold : 8	 Epoch : 49	 Training Loss : 0.005352731027025064
+2022-02-23 12:04:53,631 Fold : 8	 Epoch : 49	 Validation Loss 0.18540972180198878	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:05:18,870 Fold : 8	 Epoch : 50	 Training Loss : 0.0054417562641901895
+2022-02-23 12:05:19,763 Fold : 8	 Epoch : 50	 Validation Loss 0.1411777776755536	 accuracy : 0.9698492462311558	 TP : 193	 FP : 6	
+2022-02-23 12:05:19,763 Fold 8 Finished. Saving best Accuracy 0.9849246231155779
+2022-02-23 12:05:19,764 Starting Fold 10
+2022-02-23 12:05:45,336 Fold : 9	 Epoch : 1	 Training Loss : 0.4117458541212337
+2022-02-23 12:05:46,182 Fold : 9	 Epoch : 1	 Validation Loss 0.16359496345886818	 accuracy : 0.9798994974874372	 TP : 195	 FP : 4	
+2022-02-23 12:05:48,160 Best Model saved with accuracy 0.9798994974874372
+2022-02-23 12:06:13,415 Fold : 9	 Epoch : 2	 Training Loss : 0.12971783302990453
+2022-02-23 12:06:14,260 Fold : 9	 Epoch : 2	 Validation Loss 0.08680012908119422	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 12:06:26,061 Best Model saved with accuracy 0.9849246231155779
+2022-02-23 12:06:51,473 Fold : 9	 Epoch : 3	 Training Loss : 0.08563682363767709
+2022-02-23 12:06:52,302 Fold : 9	 Epoch : 3	 Validation Loss 0.08071722777990195	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 12:07:05,463 Best Model saved with accuracy 0.9899497487437185
+2022-02-23 12:07:30,706 Fold : 9	 Epoch : 4	 Training Loss : 0.057802060818565745
+2022-02-23 12:07:31,553 Fold : 9	 Epoch : 4	 Validation Loss 0.03302909376529547	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:07:44,867 Best Model saved with accuracy 1.0
+2022-02-23 12:08:09,919 Fold : 9	 Epoch : 5	 Training Loss : 0.046806029110614746
+2022-02-23 12:08:10,757 Fold : 9	 Epoch : 5	 Validation Loss 0.06251037708268715	 accuracy : 0.9849246231155779	 TP : 196	 FP : 3	
+2022-02-23 12:08:35,796 Fold : 9	 Epoch : 6	 Training Loss : 0.03491511200055746
+2022-02-23 12:08:36,643 Fold : 9	 Epoch : 6	 Validation Loss 0.025095052014176663	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:09:01,696 Fold : 9	 Epoch : 7	 Training Loss : 0.029906458520729626
+2022-02-23 12:09:02,542 Fold : 9	 Epoch : 7	 Validation Loss 0.02118259947746992	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:09:27,634 Fold : 9	 Epoch : 8	 Training Loss : 0.029976124093601748
+2022-02-23 12:09:28,472 Fold : 9	 Epoch : 8	 Validation Loss 0.023476389093467824	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:09:53,562 Fold : 9	 Epoch : 9	 Training Loss : 0.024537256187094108
+2022-02-23 12:09:54,411 Fold : 9	 Epoch : 9	 Validation Loss 0.014544286478597384	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:10:19,581 Fold : 9	 Epoch : 10	 Training Loss : 0.026501690370163748
+2022-02-23 12:10:20,438 Fold : 9	 Epoch : 10	 Validation Loss 0.013448290885067903	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:10:45,497 Fold : 9	 Epoch : 11	 Training Loss : 0.018906405731935853
+2022-02-23 12:10:46,346 Fold : 9	 Epoch : 11	 Validation Loss 0.012457122954611596	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:11:11,571 Fold : 9	 Epoch : 12	 Training Loss : 0.026345441737378548
+2022-02-23 12:11:12,421 Fold : 9	 Epoch : 12	 Validation Loss 0.035679917281063706	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:11:37,605 Fold : 9	 Epoch : 13	 Training Loss : 0.027628049807390198
+2022-02-23 12:11:38,450 Fold : 9	 Epoch : 13	 Validation Loss 0.011840081522957636	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:12:03,602 Fold : 9	 Epoch : 14	 Training Loss : 0.02469811073803742
+2022-02-23 12:12:04,445 Fold : 9	 Epoch : 14	 Validation Loss 0.011232311120973183	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:12:29,736 Fold : 9	 Epoch : 15	 Training Loss : 0.03710588979967205
+2022-02-23 12:12:30,590 Fold : 9	 Epoch : 15	 Validation Loss 0.029877000201780062	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:12:55,800 Fold : 9	 Epoch : 16	 Training Loss : 0.017921666735284298
+2022-02-23 12:12:56,655 Fold : 9	 Epoch : 16	 Validation Loss 0.01942135852116805	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:13:21,867 Fold : 9	 Epoch : 17	 Training Loss : 0.012886335773925697
+2022-02-23 12:13:22,711 Fold : 9	 Epoch : 17	 Validation Loss 0.011621098069903942	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:13:47,925 Fold : 9	 Epoch : 18	 Training Loss : 0.012028667506196402
+2022-02-23 12:13:48,772 Fold : 9	 Epoch : 18	 Validation Loss 0.01130664420242493	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:14:14,095 Fold : 9	 Epoch : 19	 Training Loss : 0.011573466967092827
+2022-02-23 12:14:14,966 Fold : 9	 Epoch : 19	 Validation Loss 0.0213762279241704	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:14:40,220 Fold : 9	 Epoch : 20	 Training Loss : 0.010914585129025258
+2022-02-23 12:14:41,078 Fold : 9	 Epoch : 20	 Validation Loss 0.011094913137360262	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:15:06,529 Fold : 9	 Epoch : 21	 Training Loss : 0.010644969035638496
+2022-02-23 12:15:07,371 Fold : 9	 Epoch : 21	 Validation Loss 0.010066474519240169	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:15:32,816 Fold : 9	 Epoch : 22	 Training Loss : 0.01048733614360182
+2022-02-23 12:15:33,710 Fold : 9	 Epoch : 22	 Validation Loss 0.01938035675825981	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:15:58,966 Fold : 9	 Epoch : 23	 Training Loss : 0.009945398437724049
+2022-02-23 12:15:59,816 Fold : 9	 Epoch : 23	 Validation Loss 0.0212702254513995	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:16:25,254 Fold : 9	 Epoch : 24	 Training Loss : 0.009761740981567917
+2022-02-23 12:16:26,101 Fold : 9	 Epoch : 24	 Validation Loss 0.02162479374629374	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:16:51,464 Fold : 9	 Epoch : 25	 Training Loss : 0.00946229459701239
+2022-02-23 12:16:52,331 Fold : 9	 Epoch : 25	 Validation Loss 0.01852638113240783	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:17:17,619 Fold : 9	 Epoch : 26	 Training Loss : 0.009594746844543676
+2022-02-23 12:17:18,484 Fold : 9	 Epoch : 26	 Validation Loss 0.02552776194464129	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:17:43,765 Fold : 9	 Epoch : 27	 Training Loss : 0.011240507457322175
+2022-02-23 12:17:44,611 Fold : 9	 Epoch : 27	 Validation Loss 0.011571286299910683	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:18:10,001 Fold : 9	 Epoch : 28	 Training Loss : 0.02347194173281813
+2022-02-23 12:18:10,848 Fold : 9	 Epoch : 28	 Validation Loss 0.011218192091641517	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:18:36,275 Fold : 9	 Epoch : 29	 Training Loss : 0.02095770336953657
+2022-02-23 12:18:37,107 Fold : 9	 Epoch : 29	 Validation Loss 0.02820396813778923	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:19:02,356 Fold : 9	 Epoch : 30	 Training Loss : 0.02166210211622196
+2022-02-23 12:19:03,214 Fold : 9	 Epoch : 30	 Validation Loss 0.010567932729967512	 accuracy : 1.0	 TP : 199	 FP : 0	
+2022-02-23 12:19:28,603 Fold : 9	 Epoch : 31	 Training Loss : 0.01045030404098465
+2022-02-23 12:19:29,468 Fold : 9	 Epoch : 31	 Validation Loss 0.009429617140155572	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:19:54,896 Fold : 9	 Epoch : 32	 Training Loss : 0.009466819367454653
+2022-02-23 12:19:55,765 Fold : 9	 Epoch : 32	 Validation Loss 0.009732552642862383	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:20:21,283 Fold : 9	 Epoch : 33	 Training Loss : 0.008582031740973304
+2022-02-23 12:20:22,119 Fold : 9	 Epoch : 33	 Validation Loss 0.009126360402800716	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:20:47,455 Fold : 9	 Epoch : 34	 Training Loss : 0.022710965482734276
+2022-02-23 12:20:48,294 Fold : 9	 Epoch : 34	 Validation Loss 0.029381432176495973	 accuracy : 0.9899497487437185	 TP : 197	 FP : 2	
+2022-02-23 12:21:13,808 Fold : 9	 Epoch : 35	 Training Loss : 0.010518727358430624
+2022-02-23 12:21:14,673 Fold : 9	 Epoch : 35	 Validation Loss 0.033449441445274994	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:21:40,036 Fold : 9	 Epoch : 36	 Training Loss : 0.009018939865719793
+2022-02-23 12:21:40,881 Fold : 9	 Epoch : 36	 Validation Loss 0.031172722524318557	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:22:06,385 Fold : 9	 Epoch : 37	 Training Loss : 0.008832875129883178
+2022-02-23 12:22:07,234 Fold : 9	 Epoch : 37	 Validation Loss 0.03137712483294308	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:22:32,531 Fold : 9	 Epoch : 38	 Training Loss : 0.00874744038654691
+2022-02-23 12:22:33,391 Fold : 9	 Epoch : 38	 Validation Loss 0.03197013281393223	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:22:58,735 Fold : 9	 Epoch : 39	 Training Loss : 0.008557773502876185
+2022-02-23 12:22:59,588 Fold : 9	 Epoch : 39	 Validation Loss 0.03250758761826616	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:23:24,999 Fold : 9	 Epoch : 40	 Training Loss : 0.00843047458329238
+2022-02-23 12:23:25,853 Fold : 9	 Epoch : 40	 Validation Loss 0.032685253804979414	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:23:51,254 Fold : 9	 Epoch : 41	 Training Loss : 0.012858022856692384
+2022-02-23 12:23:52,134 Fold : 9	 Epoch : 41	 Validation Loss 0.03170671322956108	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:24:17,530 Fold : 9	 Epoch : 42	 Training Loss : 0.010721337342277235
+2022-02-23 12:24:18,437 Fold : 9	 Epoch : 42	 Validation Loss 0.03062248330276746	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:24:43,742 Fold : 9	 Epoch : 43	 Training Loss : 0.008213658303637723
+2022-02-23 12:24:44,621 Fold : 9	 Epoch : 43	 Validation Loss 0.03084210264317405	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:25:09,909 Fold : 9	 Epoch : 44	 Training Loss : 0.008157267846399918
+2022-02-23 12:25:10,763 Fold : 9	 Epoch : 44	 Validation Loss 0.06473424239084125	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:25:36,090 Fold : 9	 Epoch : 45	 Training Loss : 0.008585595750316446
+2022-02-23 12:25:36,938 Fold : 9	 Epoch : 45	 Validation Loss 0.03120602490917708	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:26:02,173 Fold : 9	 Epoch : 46	 Training Loss : 0.008195995863518744
+2022-02-23 12:26:03,033 Fold : 9	 Epoch : 46	 Validation Loss 0.030543344435640253	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:26:28,336 Fold : 9	 Epoch : 47	 Training Loss : 0.007928912822015783
+2022-02-23 12:26:29,186 Fold : 9	 Epoch : 47	 Validation Loss 0.030591946954910573	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:26:54,472 Fold : 9	 Epoch : 48	 Training Loss : 0.007849861713891317
+2022-02-23 12:26:55,339 Fold : 9	 Epoch : 48	 Validation Loss 0.030629937554924533	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:27:20,543 Fold : 9	 Epoch : 49	 Training Loss : 0.007622542135192946
+2022-02-23 12:27:21,414 Fold : 9	 Epoch : 49	 Validation Loss 0.03032410592557146	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:27:46,648 Fold : 9	 Epoch : 50	 Training Loss : 0.007561882994195912
+2022-02-23 12:27:47,517 Fold : 9	 Epoch : 50	 Validation Loss 0.027054544439754233	 accuracy : 0.9949748743718593	 TP : 198	 FP : 1	
+2022-02-23 12:27:47,518 Fold 9 Finished. Saving best Accuracy 1.0
+2022-02-23 12:27:47,518 All folds are finished overall accuracy is 0.9944924623115577
+2022-02-23 12:27:47,519 {'0': 1.0,
+ '1': 1.0,
+ '2': 0.985,
+ '3': 1.0,
+ '4': 0.985,
+ '5': 1.0,
+ '6': 0.99,
+ '7': 1.0,
+ '8': 0.9849246231155779,
+ '9': 1.0}
